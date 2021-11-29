@@ -11,8 +11,8 @@ import {
 
 export const Navbar = () => {
   return(
-    <NavigationBar data-test="navbar-component" >
-      <Button icon={<StyledBihome />} description="Home" />
+    <NavigationBar data-test="navbar-component">
+      <Button icon={<StyledBihome />} description="Home"></Button>
       <Button icon={<StyledAiOutlineSchedule />} description="Schedule" />
       <Button icon={<StyledAiOutlineDesktop />} description="Channels" />
       <Button icon={<StyledAiOutlineNotification/>} description="Notifications" />

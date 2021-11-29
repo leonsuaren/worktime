@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { globalStyles } from '../../global';
 import { AiOutlineHome, AiOutlineSchedule, AiOutlineDesktop, AiOutlineNotification, AiOutlineMore } from 'react-icons/ai';
 
 export const NavigationBar = styled.div`
@@ -7,15 +6,15 @@ export const NavigationBar = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100vw;
   height: 70px;
-  background-color: ${globalStyles.pallete.navbar};
-  border-bottom: 1px solid ${globalStyles.pallete.alternativeBackground};
+  background-color: ${p => p.theme.navBarBackground};
+  border-bottom: ${p => p.theme.borderColor};
 `;
 
 const commonIconStyled = () => {
   return(
     css`
       font-size: 20px;
-      color: #666666;
+      color: ${p => p.theme.fontColor};
     `
   )
 };

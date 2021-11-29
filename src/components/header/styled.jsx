@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { globalStyles } from '../../global/index';
 
 export const Head =  styled.div`
   display: flex;
@@ -7,9 +6,9 @@ export const Head =  styled.div`
   align-items: center;
   width: 100vw;
   height: 80px;
-  background-color: ${globalStyles.pallete.background};
+  background: ${p => p.theme.headerBackground};
 `;
 
 export const HeadTitle = styled.h1`
-  color: ${globalStyles.pallete.secondaryFont}
+  color: ${p => p.theme.fontColor}
 `;
