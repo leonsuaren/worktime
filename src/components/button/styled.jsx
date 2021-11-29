@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { globaStyles, globalStyles } from '../../global';
 
 export const ButtonStyled = styled.button`
   border: none;
@@ -15,5 +14,6 @@ export const ButtonDescription = styled.span`
   margin-top: 7px;
   font-size: .7rem;
   font-weight: bold;
-  font-family: ${globalStyles.typography.primaryFont};
+  font-family: 'Montserrat';
+  color: #666666;
 `;

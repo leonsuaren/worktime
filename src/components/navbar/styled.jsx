@@ -15,6 +15,7 @@ const commonIconStyled = () => {
   return(
     css`
       font-size: 20px;
+      color: #666666;
     `
   )
 };
