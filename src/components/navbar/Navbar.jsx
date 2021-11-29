@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { NavigationBar } from './index';
 import { Button } from '../button';
 import { 
@@ -10,9 +11,15 @@ import {
 } from './index';
 
 export const Navbar = () => {
+  const {id, setTheme} = useContext(ThemeContext);
+
+  const handleOnClick = () => {
+    setTheme(s => id === 'down' ? 'sunset' : 'down')
+  }
+
   return(
-    <NavigationBar data-test="navbar-component" >
-      <Button icon={<StyledBihome />} description="Home" />
+    <NavigationBar data-test="navbar-component">
+      <Button icon={<StyledBihome />} description="Home"></Button>
       <Button icon={<StyledAiOutlineSchedule />} description="Schedule" />
       <Button icon={<StyledAiOutlineDesktop />} description="Channels" />
       <Button icon={<StyledAiOutlineNotification/>} description="Notifications" />
@@ -20,3 +27,5 @@ export const Navbar = () => {
     </NavigationBar>
   );
 };
+
+//      <button id={id} onClick={handleOnClick}>change theme</button>
