@@ -11,6 +11,5 @@ export const Head =  styled.div`
 `;
 
 export const HeadTitle = styled.h1`
-  font-family: ${globalStyles.typography.primaryFont};
   color: ${globalStyles.pallete.secondaryFont}
 `;
