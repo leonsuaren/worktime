@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
+import { Toggle } from '../../components/toggle';
 
 export const Settings = () => {
   return(
     <Fragment>
-      <h1>Settings</h1>
+      <Toggle />
     </Fragment>
   )
 };
