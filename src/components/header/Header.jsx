@@ -4,7 +4,7 @@ import { Head, HeadTitle, HeadTime, HeadAvatar, DefaultContent } from './index';
 import { Avatar } from './../avatar';
 import { DateTime } from 'luxon';
 
-export const Header = ({ page }) => {
+export const Header = ({ page, isActive }) => {
   const dt = DateTime.now();
   let hour = dt.toLocaleString(DateTime.TIME_SIMPLE);
 
@@ -12,7 +12,7 @@ export const Header = ({ page }) => {
     <Fragment>
       <Head data-test="header-component">
         <HeadTime>{hour}</HeadTime>
-        <HeadTitle data-test="title-component">{page ? page : 'Distribution Center'}</HeadTitle>
+        <HeadTitle data-test="title-component" isActive>{page ? page : 'Distribution Center'}</HeadTitle>
         <HeadAvatar>
           <Avatar><DefaultContent>RS</DefaultContent></Avatar>
         </HeadAvatar>
