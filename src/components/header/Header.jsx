@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Head, HeadTitle, HeadTime } from './index';
+import { Head, HeadTitle, HeadTime, HeadAvatar, DefaultContent } from './index';
+import { Avatar } from './../avatar';
 import { DateTime } from 'luxon';
 
 export const Header = ({ page }) => {
@@ -8,12 +9,14 @@ export const Header = ({ page }) => {
   let hour = dt.toLocaleString(DateTime.TIME_SIMPLE);
   console.log(dt.toLocaleString(DateTime.TIME_SIMPLE))
 
-  return(
+  return (
     <Fragment>
       <Head data-test="header-component">
-        <HeadTime>{ hour }</HeadTime>
-        <HeadTitle data-test="title-component">{ page ? page : 'Distribution Center' }</HeadTitle>
-        <div></div>
+        <HeadTime>{hour}</HeadTime>
+        <HeadTitle data-test="title-component">{page ? page : 'Distribution Center'}</HeadTitle>
+        <HeadAvatar>
+          <Avatar><DefaultContent>RS</DefaultContent></Avatar>
+        </HeadAvatar>
       </Head>
     </Fragment>
   );

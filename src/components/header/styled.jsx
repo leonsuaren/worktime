@@ -25,3 +25,16 @@ export const HeadTime = styled.div`
   margin: 0;
   font-weight: 600;
 `;
+
+export const HeadAvatar = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+`;
+
+export const DefaultContent = styled.p`
+  color: ${p => p.theme.fontColor};
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+`;

@@ -24,6 +24,7 @@ export const Navbar = () => {
       <Button icon={<StyledAiOutlineDesktop />} description="Channels" />
       <Button icon={<StyledAiOutlineNotification/>} description="Notifications" />
       <Button icon={<StyledAiOutlineMore />} description="More" />
+      <button id={id} onClick={handleOnClick}>change theme</button>
     </NavigationBar>
   );
 };
