@@ -1,17 +1,27 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Head, HeadTitle } from './index';
+import { Head, HeadTitle, HeadTime, HeadAvatar, DefaultContent } from './index';
+import { Avatar } from './../avatar';
+import { DateTime } from 'luxon';
 
-export const Header = ({ brand }) => {
-  return(
+export const Header = ({ page }) => {
+  const dt = DateTime.now();
+  let hour = dt.toLocaleString(DateTime.TIME_SIMPLE);
+  console.log(dt.toLocaleString(DateTime.TIME_SIMPLE))
+
+  return (
     <Fragment>
       <Head data-test="header-component">
-        <HeadTitle data-test="title-component">{ brand ? brand : 'Distribution Center' }</HeadTitle>
+        <HeadTime>{hour}</HeadTime>
+        <HeadTitle data-test="title-component">{page ? page : 'Distribution Center'}</HeadTitle>
+        <HeadAvatar>
+          <Avatar><DefaultContent>RS</DefaultContent></Avatar>
+        </HeadAvatar>
       </Head>
     </Fragment>
   );
 };
 
 Header.propTypes = {
-  brand: PropTypes.string.isRequired
+  page: PropTypes.string.isRequired
 };
