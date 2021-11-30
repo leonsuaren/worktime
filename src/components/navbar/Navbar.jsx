@@ -3,22 +3,18 @@ import { useLocation } from 'react-router-dom';
 import { ThemeContext } from 'styled-components';
 import { NavigationBar } from './index';
 import { Button } from '../button';
+import { LinkTo } from './index';
 import {
   StyledBihome,
   StyledAiOutlineSchedule,
   StyledAiOutlineDesktop,
   StyledAiOutlineNotification,
-  StyledAiOutlineMore,
-  LinkTo
-} from './index';
+  StyledAiOutlineMore
+} from '../../global';
 
 export const Navbar = () => {
   const { id, setTheme } = useContext(ThemeContext);
   const { pathname } = useLocation();
-
-  const handleOnClick = () => {
-    setTheme(s => id === 'down' ? 'sunset' : 'down')
-  }
 
   return (
     <NavigationBar data-test="navbar-component">
@@ -40,5 +36,3 @@ export const Navbar = () => {
     </NavigationBar>
   );
 };
-
-//      <button id={id} onClick={handleOnClick}>change theme</button>
