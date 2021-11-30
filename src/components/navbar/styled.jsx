@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { AiOutlineHome, AiOutlineSchedule, AiOutlineDesktop, AiOutlineNotification, AiOutlineMore } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link as ReactRouterDomLink} from 'react-router-dom';
 
 export const NavigationBar = styled.div`
   display: grid;
@@ -22,6 +22,22 @@ const commonIconStyled = () => {
   )
 };
 
+const active = ({isActive}) => {
+  if(isActive) {
+    return(
+      css`
+      border-bottom: 1px solid ${p => p.theme.fontColor};
+      `
+    )
+  } else {
+    return(
+      css`
+        border-bottom: none;
+      `
+    )
+  }
+}
+
 export const StyledBihome = styled(AiOutlineHome)`
   ${commonIconStyled}
 `;
@@ -42,8 +58,18 @@ export const StyledAiOutlineMore = styled(AiOutlineMore)`
   ${commonIconStyled}
 `;
 
+const Link = ({isActive, children, ...props}) => {
+  return(
+    <ReactRouterDomLink {...props}>
+      {children}
+    </ReactRouterDomLink>
+  )
+}
+
 export const LinkTo = styled(Link)`
   text-decoration: none;
   display: block;
-  margin-top: 7px;
+  text-align: center;
+  box-sizing: border-box;
+  ${active}
 `;
