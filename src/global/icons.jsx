@@ -1,5 +1,12 @@
 import styled, { css } from 'styled-components';
-import { AiFillSetting } from 'react-icons/ai';
+import { 
+  AiFillSetting, 
+  AiOutlineHome, 
+  AiOutlineSchedule, 
+  AiOutlineDesktop, 
+  AiOutlineNotification, 
+  AiOutlineMore 
+} from 'react-icons/ai';
 
 const commonIconStyled = () => {
   return(
@@ -10,24 +17,27 @@ const commonIconStyled = () => {
   )
 };
 
-
-const active = ({isActive}) => {
-  if(isActive) {
-    return(
-      css`
-      border-bottom: 1px solid ${p => p.theme.fontColor};
-      `
-    )
-  } else {
-    return(
-      css`
-        border-bottom: none;
-      `
-    )
-  }
-}
-
 export const StyledFillSetting = styled(AiFillSetting)`
+  ${commonIconStyled}
+`;
+
+export const StyledBihome = styled(AiOutlineHome)`
+  ${commonIconStyled}
+`;
+
+export const StyledAiOutlineSchedule = styled(AiOutlineSchedule)`
+  ${commonIconStyled}
+`;
+
+export const StyledAiOutlineDesktop = styled(AiOutlineDesktop)`
+  ${commonIconStyled}
+`;
+
+export const StyledAiOutlineNotification = styled(AiOutlineNotification)`
+  ${commonIconStyled}
+`;
+
+export const StyledAiOutlineMore = styled(AiOutlineMore)`
   ${commonIconStyled}
 `;
 

@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { AiOutlineHome, AiOutlineSchedule, AiOutlineDesktop, AiOutlineNotification, AiOutlineMore } from 'react-icons/ai';
 import { Link as ReactRouterDomLink} from 'react-router-dom';
 
 export const NavigationBar = styled.div`
@@ -37,26 +36,6 @@ const active = ({isActive}) => {
     )
   }
 }
-
-export const StyledBihome = styled(AiOutlineHome)`
-  ${commonIconStyled}
-`;
-
-export const StyledAiOutlineSchedule = styled(AiOutlineSchedule)`
-  ${commonIconStyled}
-`;
-
-export const StyledAiOutlineDesktop = styled(AiOutlineDesktop)`
-  ${commonIconStyled}
-`;
-
-export const StyledAiOutlineNotification = styled(AiOutlineNotification)`
-  ${commonIconStyled}
-`;
-
-export const StyledAiOutlineMore = styled(AiOutlineMore)`
-  ${commonIconStyled}
-`;
 
 const Link = ({isActive, children, ...props}) => {
   return(
