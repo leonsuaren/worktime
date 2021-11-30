@@ -1,4 +1,5 @@
 import React from 'react';
+import { Header } from './../components/header';
 import styled from 'styled-components';
 
 const Layout = styled.div`
@@ -9,6 +10,7 @@ const Layout = styled.div`
 export const PageLayout = ({ children }) => {
   return (
     <Layout>
+      <Header page="HOME" />
       {children}
     </Layout>
   );
