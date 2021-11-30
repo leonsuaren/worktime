@@ -4,7 +4,7 @@ import { Head, HeadTitle, HeadTime, HeadAvatar, DefaultContent } from './index';
 import { Avatar } from './../avatar';
 import { DateTime } from 'luxon';
 
-export const Header = ({ page, isActive }) => {
+export const Header = ({ page }) => {
   const dt = DateTime.now();
   let hour = dt.toLocaleString(DateTime.TIME_SIMPLE);
 
