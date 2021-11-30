@@ -4,8 +4,8 @@ import {
   ButtonDescription
  } from './index';
 
-export const Button = ({ icon, description }) => {
+export const Button = ({ icon, description, ...props }) => {
   return(
-    <ButtonStyled data-test="component-button">{ icon }<ButtonDescription>{ description }</ButtonDescription></ButtonStyled>
+    <ButtonStyled data-test="component-button" {...props}>{ icon }<ButtonDescription>{ description }</ButtonDescription></ButtonStyled>
   );
 };

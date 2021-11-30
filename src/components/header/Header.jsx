@@ -7,7 +7,6 @@ import { DateTime } from 'luxon';
 export const Header = ({ page }) => {
   const dt = DateTime.now();
   let hour = dt.toLocaleString(DateTime.TIME_SIMPLE);
-  console.log(dt.toLocaleString(DateTime.TIME_SIMPLE))
 
   return (
     <Fragment>

@@ -5,5 +5,6 @@ export {
   StyledAiOutlineSchedule, 
   StyledAiOutlineDesktop, 
   StyledAiOutlineNotification ,
-  StyledAiOutlineMore
+  StyledAiOutlineMore,
+  LinkTo
 } from './styled';
