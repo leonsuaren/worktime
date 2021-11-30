@@ -2,29 +2,39 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { NavigationBar } from './index';
 import { Button } from '../button';
-import { 
-  StyledBihome, 
-  StyledAiOutlineSchedule, 
-  StyledAiOutlineDesktop, 
-  StyledAiOutlineNotification, 
-  StyledAiOutlineMore 
+import {
+  StyledBihome,
+  StyledAiOutlineSchedule,
+  StyledAiOutlineDesktop,
+  StyledAiOutlineNotification,
+  StyledAiOutlineMore,
+  LinkTo
 } from './index';
 
 export const Navbar = () => {
-  const {id, setTheme} = useContext(ThemeContext);
+  const { id, setTheme } = useContext(ThemeContext);
 
   const handleOnClick = () => {
     setTheme(s => id === 'down' ? 'sunset' : 'down')
   }
 
-  return(
+  return (
     <NavigationBar data-test="navbar-component">
-      <Button icon={<StyledBihome />} description="Home"></Button>
-      <Button icon={<StyledAiOutlineSchedule />} description="Schedule" />
-      <Button icon={<StyledAiOutlineDesktop />} description="Channels" />
-      <Button icon={<StyledAiOutlineNotification/>} description="Notifications" />
-      <Button icon={<StyledAiOutlineMore />} description="More" />
-      <button id={id} onClick={handleOnClick}>change theme</button>
+      <LinkTo to="/">
+        <Button icon={<StyledBihome />} description="Home"></Button>
+      </LinkTo>
+      <LinkTo to="/schedule">
+        <Button icon={<StyledAiOutlineSchedule />} description="Schedule"></Button>
+      </LinkTo>
+      <LinkTo to="/channels">
+        <Button icon={<StyledAiOutlineDesktop />} description="Channels"></Button>
+      </LinkTo>
+      <LinkTo to="/notifications">
+        <Button icon={<StyledAiOutlineNotification />} description="Notifications"></Button>
+      </LinkTo>
+      <LinkTo to="/more">
+        <Button icon={<StyledAiOutlineMore />} description="More"></Button>
+      </LinkTo>
     </NavigationBar>
   );
 };
