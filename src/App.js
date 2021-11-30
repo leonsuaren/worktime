@@ -9,6 +9,7 @@ import { Schedule }  from './pages/schedule-view';
 import { Channels }  from './pages/channels-view';
 import { Notifications }  from './pages/notifications-view';
 import { More }  from './pages/more-view';
+import { Settings } from './pages/settings';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path='/channels' element={<Channels/>} />
               <Route path='/notifications' element={<Notifications/>} />
               <Route path='/more' element={<More/>} />
+              <Route path='/settings' element={<Settings/>}/>
             </Routes>
           </PageLayout>
         </Router>

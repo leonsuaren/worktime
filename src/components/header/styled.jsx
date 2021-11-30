@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as ReactRouterDomLink } from 'react-router-dom';
 
 export const Head =  styled.div`
   display: grid;
@@ -27,7 +28,8 @@ export const HeadTime = styled.div`
 `;
 
 export const HeadAvatar = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   justify-content: flex-end;
   align-items: flex-end;
 `;
@@ -37,4 +39,19 @@ export const DefaultContent = styled.p`
   margin: 0;
   padding: 0;
   font-weight: 900;
+`;
+
+const Link = ({isActive, children, ...props}) => {
+  return(
+    <ReactRouterDomLink {...props}>
+      {children}
+    </ReactRouterDomLink>
+  )
+}
+
+export const LinkTo = styled(Link)`
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
 `;
