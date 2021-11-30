@@ -22,6 +22,8 @@ export const PageLayout = ({ children }) => {
     activePage = 'CHANNELS'
   } else if(pathname === '/more') {
     activePage = 'MORE'
+  } else if(pathname === '/settings') {
+    activePage = 'SETTINGS'
   }
 
   return (
