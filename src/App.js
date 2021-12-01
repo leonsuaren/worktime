@@ -3,13 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Theme } from './global/Theme';
 import { PageLayout } from './global';
 import { GlobalStyle } from './global/GlobalStyles';
-import { Navbar } from './components/navbar';
 import { Home }  from './pages/home-view';
 import { Schedule }  from './pages/schedule-view';
 import { Channels }  from './pages/channels-view';
 import { Notifications }  from './pages/notifications-view';
 import { More }  from './pages/more-view';
-import { Settings } from './pages/settings';
+import { Settings } from './pages/settings-view';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <GlobalStyle />
         <Router>
           <PageLayout>
-            <Navbar />
             <Routes>
               <Route exact path='/' element={<Home/>} />
               <Route path='/schedule' element={<Schedule/>} />

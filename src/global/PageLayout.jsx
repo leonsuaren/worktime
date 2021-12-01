@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from './../components/header';
+import { Navbar } from './../components/navbar';
 import styled from 'styled-components';
 
 const Layout = styled.div`
@@ -29,6 +30,7 @@ export const PageLayout = ({ children }) => {
   return (
     <Layout>
       <Header page={activePage} />
+      <Navbar/>
       {children}
     </Layout>
   );

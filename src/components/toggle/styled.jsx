@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ToggleWraper = styled.div`
+export const ToggleWrapper = styled.div`
   width: 30px;
   min-width: 30px;
   height: 15px;
@@ -10,6 +10,7 @@ export const ToggleWraper = styled.div`
   margin:  auto 0;
   display: flex;
   background: '#FFFFFF';
+  cursor: pointer;
 `;
 
 export const Notch = styled.div`
@@ -17,7 +18,7 @@ export const Notch = styled.div`
   width: 11px;
   border: 1px solid ${p => p.theme.fontColor};
   margin: 1px;
-  background: ${p => p.theme.headerBackground};
+  background: ${p => p.theme.iconColor};
   border-radius: 50%;
   transition: transform 0.1s linear;
   transform: translate(${ p => p.isActive ? '14px' : '1px' });

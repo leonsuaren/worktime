@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useContext } from 'react';
-import { ToggleWraper, Notch } from './styled';
+import { ToggleWrapper, Notch } from './styled';
 import { ThemeContext } from 'styled-components';
 
 export const Toggle = () => {
@@ -13,9 +13,9 @@ export const Toggle = () => {
 
   return(
     <Fragment>
-        <ToggleWraper id={id} onClick={handleOnChangeTheme}>
+        <ToggleWrapper id={id} onClick={handleOnChangeTheme}>
           <Notch isActive={active}/>
-        </ToggleWraper>
+        </ToggleWrapper>
     </Fragment>
   )
 };
