@@ -6,6 +6,7 @@ export const ButtonStyled = styled.button`
   &:disabled {
     color: #cecece;
   }
+  cursor: pointer;
 `;
 
 export const ButtonDescription = styled.span`

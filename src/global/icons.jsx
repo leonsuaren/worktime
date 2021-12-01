@@ -5,8 +5,10 @@ import {
   AiOutlineSchedule, 
   AiOutlineDesktop, 
   AiOutlineNotification, 
-  AiOutlineMore 
+  AiOutlineMore,
+  AiFillExperiment
 } from 'react-icons/ai';
+
 
 const commonIconStyled = () => {
   return(
@@ -41,3 +43,8 @@ export const StyledAiOutlineMore = styled(AiOutlineMore)`
   ${commonIconStyled}
 `;
 
+export const StyledAiFillExperiment = styled(AiFillExperiment)`
+  font-size: 20px;
+  color: ${p => p.theme.headerBackground};
+  align-self: center;
+`;

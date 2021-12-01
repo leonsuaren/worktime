@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ToggleWraper = styled.div`
+export const ToggleWrapper = styled.div`
   width: 30px;
   min-width: 30px;
   height: 15px;
@@ -10,6 +10,7 @@ export const ToggleWraper = styled.div`
   margin:  auto 0;
   display: flex;
   background: '#FFFFFF';
+  cursor: pointer;
 `;
 
 export const Notch = styled.div`
