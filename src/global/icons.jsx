@@ -1,17 +1,24 @@
 import styled, { css } from 'styled-components';
-import { 
-  AiFillSetting, 
-  AiOutlineHome, 
-  AiOutlineSchedule, 
-  AiOutlineDesktop, 
-  AiOutlineNotification, 
+import {
+  AiFillSetting,
+  AiOutlineHome,
+  AiOutlineSchedule,
+  AiOutlineDesktop,
+  AiOutlineNotification,
   AiOutlineMore,
-  AiFillExperiment
+  AiFillExperiment,
+  AiFillCaretRight,
+  AiFillDatabase,
+  AiOutlineReconciliation,
+  AiOutlineWarning,
+  AiOutlineUsergroupAdd,
+  AiOutlineDiff,
+  AiOutlineVideoCamera
 } from 'react-icons/ai';
 
 
-const commonIconStyled = () => {
-  return(
+const IconStyled = () => {
+  return (
     css`
       font-size: 20px;
       color: ${p => p.theme.fontColor};
@@ -19,32 +26,68 @@ const commonIconStyled = () => {
   )
 };
 
+const ThemeIconStyled = () => {
+  return (
+    css`
+    font-size: 20px;
+    color: ${p => p.theme.iconColor};
+    align-self: center;
+    `
+  )
+}
+
 export const StyledFillSetting = styled(AiFillSetting)`
-  ${commonIconStyled}
+  ${IconStyled};
 `;
 
 export const StyledBihome = styled(AiOutlineHome)`
-  ${commonIconStyled}
+  ${IconStyled};
 `;
 
 export const StyledAiOutlineSchedule = styled(AiOutlineSchedule)`
-  ${commonIconStyled}
+  ${IconStyled};
 `;
 
 export const StyledAiOutlineDesktop = styled(AiOutlineDesktop)`
-  ${commonIconStyled}
+  ${IconStyled};
 `;
 
 export const StyledAiOutlineNotification = styled(AiOutlineNotification)`
-  ${commonIconStyled}
+  ${IconStyled};
 `;
 
 export const StyledAiOutlineMore = styled(AiOutlineMore)`
-  ${commonIconStyled}
+  ${IconStyled};
 `;
 
 export const StyledAiFillExperiment = styled(AiFillExperiment)`
-  font-size: 20px;
-  color: ${p => p.theme.headerBackground};
-  align-self: center;
+  ${ThemeIconStyled};
+`;
+
+export const StyledAiFillCaretRight = styled(AiFillCaretRight)`
+  ${ThemeIconStyled};
+`;
+
+export const StyledAiFillDatabase = styled(AiFillDatabase)`
+  ${ThemeIconStyled};
+`;
+
+export const StyledAiOutlineReconciliation = styled(AiOutlineReconciliation)`
+  ${ThemeIconStyled};
+`;
+
+export const StyledAiOutlineWarning = styled(AiOutlineWarning)`
+  ${ThemeIconStyled};
+`;
+
+export const StyledAiOutlineUsergroupAdd = styled(AiOutlineUsergroupAdd)`
+  ${ThemeIconStyled};
+`;
+
+export const StyledAiOutlineDiff = styled(AiOutlineDiff)`
+  ${ThemeIconStyled};
+`;
+
+export const StyledAiOutlineVideoCamera = styled(AiOutlineVideoCamera)`
+  ${ThemeIconStyled};
 `;

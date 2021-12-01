@@ -18,7 +18,7 @@ export const Notch = styled.div`
   width: 11px;
   border: 1px solid ${p => p.theme.fontColor};
   margin: 1px;
-  background: ${p => p.theme.headerBackground};
+  background: ${p => p.theme.iconColor};
   border-radius: 50%;
   transition: transform 0.1s linear;
   transform: translate(${ p => p.isActive ? '14px' : '1px' });
