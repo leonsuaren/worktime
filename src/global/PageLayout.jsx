@@ -25,6 +25,8 @@ export const PageLayout = ({ children }) => {
     activePage = 'MORE'
   } else if(pathname === '/settings') {
     activePage = 'SETTINGS'
+  } else if(pathname === '/settings/add-notifications') {
+    activePage = 'SETTINGS'
   }
 
   return (

@@ -12,14 +12,9 @@ export const NavigationBar = styled.div`
   border-bottom: ${p => p.theme.borderColor};
 `;
 
-const commonIconStyled = () => {
-  return(
-    css`
-      font-size: 20px;
-      color: ${p => p.theme.fontColor};
-    `
-  )
-};
+export const NavigationWrapper = styled.div`
+  display: ${p => p.isActive ? 'none' : 'flex'};
+`;
 
 const active = ({isActive}) => {
   if(isActive) {
