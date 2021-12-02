@@ -13,7 +13,9 @@ import {
   AiOutlineWarning,
   AiOutlineUsergroupAdd,
   AiOutlineDiff,
-  AiOutlineVideoCamera
+  AiOutlineVideoCamera,
+  AiOutlineCalendar,
+  AiOutlineCopy
 } from 'react-icons/ai';
 
 
@@ -90,4 +92,16 @@ export const StyledAiOutlineDiff = styled(AiOutlineDiff)`
 
 export const StyledAiOutlineVideoCamera = styled(AiOutlineVideoCamera)`
   ${ThemeIconStyled};
+`;
+
+export const StyledAiOutlineCalendar = styled(AiOutlineCalendar)`
+    color: ${p => p.theme.iconColor};
+    align-self: center;
+    font-size: 50px;
+`;
+
+export const StyledAiOutlineCopy = styled(AiOutlineCopy)`
+    color: ${p => p.theme.iconColor};
+    align-self: center;
+    font-size: 60px;
 `;

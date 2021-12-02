@@ -6,12 +6,13 @@ import styled from 'styled-components';
 
 const Layout = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr auto;
+  grid-template-rows: ${p => p.headerLayout ? '1fr 1fr auto' : '1fr auto'};
 `;
 
 export const PageLayout = ({ children }) => {
   const {pathname} = useLocation();
   let activePage;
+  let headerLayout = false;
 
   if(pathname === '/') {
     activePage = 'HOME';
@@ -26,11 +27,12 @@ export const PageLayout = ({ children }) => {
   } else if(pathname === '/settings') {
     activePage = 'SETTINGS'
   } else if(pathname === '/settings/add-notifications') {
-    activePage = 'SETTINGS'
+    activePage = 'SETTINGS';
+    headerLayout = false
   }
 
   return (
-    <Layout>
+    <Layout headerLayout={headerLayout}>
       <Header page={activePage} />
       <Navbar/>
       {children}
