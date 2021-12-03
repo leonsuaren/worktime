@@ -19,3 +19,15 @@ export const Span = styled.p`
   font-size: .7rem;
   font-weight: bold;
 `;
+
+export const SlicerTitleWrapper = styled.div`
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  font-weight: bold;
+  width: 100%;
+  height: 40px;
+  border: none;
+  margin: 5px 0;
+  background: ${p => p.theme.iconColor};
+`;

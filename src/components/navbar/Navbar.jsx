@@ -13,11 +13,18 @@ import { ResponsiveContainer } from '../../global/PageLayout';
 
 export const Navbar = () => {
   const { pathname } = useLocation();
+  let showNavigationBar = false;
+
+  if(pathname === "/settings/add-notifications") {
+    showNavigationBar = true
+  } else if (pathname === "/first-contact") {
+    showNavigationBar = true
+  }
 
   return (
     <Navigation>
       <ResponsiveContainer>
-        <NavigationWrapper isActive={pathname === "/settings/add-notifications"}>
+        <NavigationWrapper isActive={showNavigationBar}>
           <NavigationBar data-test="navbar-component">
             <LinkTo to="/" isActive={pathname === "/"}>
               <Button icon={<StyledBihome />} description="Home"></Button>

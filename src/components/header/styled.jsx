@@ -11,7 +11,7 @@ export const Head =  styled.div`
 
 export const HeaderWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 20% 60% 20%;
 `;
 
 export const HeadTitle = styled.h3`

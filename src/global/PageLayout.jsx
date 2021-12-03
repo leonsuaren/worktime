@@ -27,6 +27,9 @@ export const PageLayout = ({ children }) => {
 
   if (pathname === '/') {
     activePage = 'HOME';
+  } else if (pathname === '/first-contact') {
+    activePage = 'FIRST CONTACT';
+    headerLayout = false;
   } else if (pathname === '/schedule') {
     activePage = 'SCHEDULE'
   } else if (pathname === '/notifications') {

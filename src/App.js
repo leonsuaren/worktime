@@ -10,6 +10,7 @@ import { Notifications } from './pages/notifications-view';
 import { AddNotifications } from './pages/settings-view/add-notifications';
 import { More } from './pages/more-view';
 import { Settings } from './pages/settings-view';
+import { FirstContact } from './pages/home-view/first-contact-view';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path='more' element={<More />} />
               <Route path='settings' element={<Settings />}/>
               <Route path='settings/add-notifications' element={<AddNotifications />} />
+              <Route path='first-contact' element={<FirstContact />} />
             </Routes>
           </PageLayout>
         </Router>
