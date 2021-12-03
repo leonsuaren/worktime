@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SlicerWrapper = styled.div`
   display: grid;
-  grid-template-columns: 10% 70% 20%;
+  grid-template-columns: 15% 70% 15%;
   justify-items: center;
   align-content: center;
   width: 100%;

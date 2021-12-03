@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { Link as ReactRouterDomLink } from 'react-router-dom';
 
 export const Head =  styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   width: 100vw;
   height: 80px;
   padding: 10px;
   box-sizing: border-box;
   background: ${p => p.theme.headerBackground};
+`;
+
+export const HeaderWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 `;
 
 export const HeadTitle = styled.h3`

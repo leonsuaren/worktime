@@ -9,24 +9,35 @@ const Layout = styled.div`
   grid-template-rows: ${p => p.headerLayout ? '1fr 1fr auto' : '1fr auto'};
 `;
 
+export const ResponsiveContainer = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
+`;
+
 export const PageLayout = ({ children }) => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   let activePage;
   let headerLayout = false;
 
-  if(pathname === '/') {
+  if (pathname === '/') {
     activePage = 'HOME';
-  } else if(pathname === '/schedule') {
+  } else if (pathname === '/schedule') {
     activePage = 'SCHEDULE'
-  } else if(pathname === '/notifications') {
+  } else if (pathname === '/notifications') {
     activePage = 'NOTIFICATIONS'
-  } else if(pathname === '/channels') {
+  } else if (pathname === '/channels') {
     activePage = 'CHANNELS'
-  } else if(pathname === '/more') {
+  } else if (pathname === '/more') {
     activePage = 'MORE'
-  } else if(pathname === '/settings') {
+  } else if (pathname === '/settings') {
     activePage = 'SETTINGS'
-  } else if(pathname === '/settings/add-notifications') {
+  } else if (pathname === '/settings/add-notifications') {
     activePage = 'SETTINGS';
     headerLayout = false
   }
@@ -34,8 +45,10 @@ export const PageLayout = ({ children }) => {
   return (
     <Layout headerLayout={headerLayout}>
       <Header page={activePage} />
-      <Navbar/>
-      {children}
+      <Navbar />
+      <ResponsiveContainer>
+        {children}
+      </ResponsiveContainer>
     </Layout>
   );
 };

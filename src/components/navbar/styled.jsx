@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 import { Link as ReactRouterDomLink} from 'react-router-dom';
 
+export const Navigation = styled.div`
+  background-color: ${p => p.theme.navBarBackground};
+  border-bottom: ${p => p.theme.borderColor};
+`;
+
 export const NavigationBar = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -8,8 +13,6 @@ export const NavigationBar = styled.div`
   justify-items: center;
   width: 100vw;
   height: 70px;
-  background-color: ${p => p.theme.navBarBackground};
-  border-bottom: ${p => p.theme.borderColor};
 `;
 
 export const NavigationWrapper = styled.div`
