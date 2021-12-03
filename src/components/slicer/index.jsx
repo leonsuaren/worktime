@@ -1,1 +1,1 @@
-export { Slicer } from './Slicer';
+export { Slicer, SlicerTitle } from './Slicer';

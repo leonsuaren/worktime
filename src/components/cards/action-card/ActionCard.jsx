@@ -28,8 +28,7 @@ const FirstContact = () => {
   )
 };
 
-export const ActionCard = () => {
-  const [type, setType] = useState('FirstContact');
+export const ActionCard = ({ type }) => {
 
   return (
     <Fragment>
