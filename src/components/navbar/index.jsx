@@ -2,5 +2,6 @@ export { Navbar } from './Navbar';
 export { 
   NavigationBar, 
   LinkTo,
-  NavigationWrapper
+  NavigationWrapper,
+  Navigation
 } from './styled';
