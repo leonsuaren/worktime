@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { StyledActionCard, NotificationContent, SurveyContent, Title, Description, Day, Time, Location } from './styled';
+import { StyledActionCard, NotificationContent, FirstContactContent, Title, Description, Day, Time, Location } from './styled';
 import { StyledAiOutlineCalendar, StyledAiOutlineCopy } from '../../../global';
 
 const Notification = () => {
@@ -16,26 +16,26 @@ const Notification = () => {
   )
 };
 
-const Survey = () => {
+const FirstContact = () => {
   return (
     <Fragment>
-      <SurveyContent>
-        <Title>Survey</Title>
-        <Description>Noi abbiamo dalle domande.</Description>
-      </SurveyContent>
+      <FirstContactContent>
+        <Title>First Contact</Title>
+        <Description>Vogliamo sentire da te.</Description>
+      </FirstContactContent>
       <StyledAiOutlineCopy />
     </Fragment>
   )
 };
 
 export const ActionCard = () => {
-  const [type, setType] = useState('survey');
+  const [type, setType] = useState('FirstContact');
 
   return (
     <Fragment>
       <StyledActionCard>
         {
-          type === 'notification' ? <Notification /> : <Survey />
+          type === 'notification' ? <Notification /> : <FirstContact />
         }
       </StyledActionCard>
     </Fragment>

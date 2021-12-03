@@ -20,7 +20,7 @@ export const NotificationContent = styled.div`
   padding: 10px;
 `;
 
-export const SurveyContent = styled.div`
+export const FirstContactContent = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   width: 90%;
