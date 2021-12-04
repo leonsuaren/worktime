@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledActionCard = styled.div`
   display: grid;
@@ -63,5 +63,42 @@ export const Location = styled.p`
   font-weight: bold;
   padding: 0;
   margin: 5px;
-  font-family: 'fangsong';
 `;
+
+const inputStyled = () => {
+  return css`
+    padding: 1px 0;
+    margin: 5px;
+    border: none;
+    background: white;
+    font-family: 'fangsong';
+  `
+};
+
+export const TitleInput = styled.input`
+  color: ${p => p.theme.fontColor};
+  font-weight: bold;
+  font-size: 1.2rem;
+  ${inputStyled}
+`;
+
+export const TimeInput = styled.input`
+  color: ${p => p.theme.fontColor};
+  font-weight: bold;
+  ${inputStyled}
+`;
+
+export const DayInput = styled.input`
+  color: ${p => p.theme.iconColor};
+  ${inputStyled}
+`;
+
+export const LocationInput = styled.input`
+  color: ${p => p.theme.iconColor};
+  padding: 0;
+  margin: 5px;
+  border: none;
+  background: white;
+`;
+
+

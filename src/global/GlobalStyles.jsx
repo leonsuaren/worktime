@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -22,3 +22,9 @@ export const globalStyles = {
     disabledFont: '#666666'
   }
 };
+
+export const Hr = styled.hr`
+  width: 10%;
+  margin: 20px auto;
+
+`;
