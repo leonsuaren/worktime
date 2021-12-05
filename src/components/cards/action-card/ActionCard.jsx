@@ -1,15 +1,18 @@
-import React, { Fragment, useState } from 'react';
-import { StyledActionCard, NotificationContent, FirstContactContent, Title, Description, Day, Time, Location } from './styled';
+import React, { Fragment } from 'react';
+import {
+  StyledActionCard, NotificationContent, FirstContactContent, Title, Description, Day, Time, Location,
+  TitleInput, DayInput, TimeInput, LocationInput
+} from './styled';
 import { StyledAiOutlineCalendar, StyledAiOutlineCopy } from '../../../global';
 
-const Notification = () => {
+const Notification = ({ title, day, time, location }) => {
   return (
     <Fragment>
       <NotificationContent>
-        <Title>Next Shift</Title>
-        <Day>Tomorrow Dec 2</Day>
-        <Time>5:00 AM - 3:00 PM</Time>
-        <Location>CFC</Location>
+        <Title>{title}</Title>
+        <Day>{day}</Day>
+        <Time>{time}</Time>
+        <Location>{location}</Location>
       </NotificationContent>
       <StyledAiOutlineCalendar />
     </Fragment>
@@ -28,14 +31,30 @@ const FirstContact = () => {
   )
 };
 
-export const ActionCard = ({ type }) => {
+export const ActionCard = ({ type, title, day, time, location }) => {
 
   return (
     <Fragment>
       <StyledActionCard>
         {
-          type === 'notification' ? <Notification /> : <FirstContact />
+          type === 'notification' ? <Notification title={title} day={day} time={time} location={location} /> : <FirstContact />
         }
+      </StyledActionCard>
+    </Fragment>
+  )
+};
+
+export const ActionCardInput = ({ title, day, time, location }) => {
+  return (
+    <Fragment>
+      <StyledActionCard>
+        <NotificationContent>
+          <TitleInput type="text" name="title" value={title} disabled/>
+          <DayInput type="text" name="day" value={day} disabled/>
+          <TimeInput type="text" name="time" value={time} disabled/>
+          <LocationInput type="text" name="location" value={location} disabled/>
+        </NotificationContent>
+        <StyledAiOutlineCalendar />
       </StyledActionCard>
     </Fragment>
   )

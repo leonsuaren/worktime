@@ -1,5 +1,5 @@
 export { Button } from './Button';
 export { 
   ButtonStyled,
-  ButtonDescription
+  ButtonDescription,
 } from  './styled';
