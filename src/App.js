@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Theme } from './global/Theme';
+import { AddNotificationContextProvider } from './context/AddNotificationContext';
 import { PageLayout } from './global';
 import { GlobalStyle } from './global/GlobalStyles';
 import { Home } from './pages/home-view';
@@ -19,16 +20,18 @@ function App() {
         <GlobalStyle />
         <Router>
           <PageLayout>
-            <Routes>
-              <Route exact path='/' element={<Home />} />
-              <Route path='schedule' element={<Schedule />} />
-              <Route path='channels' element={<Channels />} />
-              <Route path='notifications' element={<Notifications />} />
-              <Route path='more' element={<More />} />
-              <Route path='settings' element={<Settings />}/>
-              <Route path='settings/add-notifications' element={<AddNotifications />} />
-              <Route path='first-contact' element={<FirstContact />} />
-            </Routes>
+            <AddNotificationContextProvider>
+              <Routes>
+                <Route exact path='/' element={<Home />} />
+                <Route path='schedule' element={<Schedule />} />
+                <Route path='channels' element={<Channels />} />
+                <Route path='notifications' element={<Notifications />} />
+                <Route path='more' element={<More />} />
+                <Route path='settings' element={<Settings />} />
+                <Route path='settings/add-notifications' element={<AddNotifications />} />
+                <Route path='first-contact' element={<FirstContact />} />
+              </Routes>
+            </AddNotificationContextProvider>
           </PageLayout>
         </Router>
       </Theme>
