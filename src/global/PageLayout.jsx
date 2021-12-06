@@ -30,7 +30,7 @@ export const PageLayout = ({ children }) => {
   if (pathname === '/') {
     activePage = `${languageContext.language.home}`;
   } else if (pathname === '/first-contact') {
-    activePage = 'FIRST CONTACT';
+    activePage = `${languageContext.language.firstContact}`;
     headerLayout = false;
   } else if (pathname === '/schedule') {
     activePage = `${languageContext.language.schedule}`;

@@ -8,6 +8,11 @@ export const ChangeLanguage = () => {
   const English = languageContext.English;
   const Spanish = languageContext.Spanish;
   const Italian = languageContext.Italian;
+  const French = languageContext.French;
+  const Chinise = languageContext.Chinise;
+  const Russian = languageContext.Russian;
+  const Portuguese = languageContext.Portuguese;
+  const Arabic = languageContext.Arabic;
 
   const onSelectEnglish = () => {
     languageContext.handleOnSelectLanguage(English);
@@ -19,10 +24,27 @@ export const ChangeLanguage = () => {
 
   const onSelectItalian = () => {
     languageContext.handleOnSelectLanguage(Italian);
+  };  
+
+  const onSelectFrench = () => {
+    languageContext.handleOnSelectLanguage(French);
   };
 
-  console.log(languageContext.language.language);
-  
+  const onSelectChinise = () => {
+    languageContext.handleOnSelectLanguage(Chinise);
+  };
+
+  const onSelectRussian = () => {
+    languageContext.handleOnSelectLanguage(Russian);
+  };
+
+  const onSelectPortuguese = () => {
+    languageContext.handleOnSelectLanguage(Portuguese);
+  };
+
+  const onSelectArabic = () => {
+    languageContext.handleOnSelectLanguage(Arabic);
+  };
 
   return (
     <Fragment>
@@ -30,11 +52,11 @@ export const ChangeLanguage = () => {
       <Slicer active={ languageContext.language.language === 'English' ? true : false } basic description={"English"} onClick={onSelectEnglish}/>
       <Slicer active={ languageContext.language.language === 'Spanish' ? true : false } basic description={"Spanish"} onClick={onSelectSpanish}/>
       <Slicer active={ languageContext.language.language === 'Italian' ? true : false } basic description={"Italian"} onClick={onSelectItalian}/>
-      <Slicer active={ languageContext.language.language === 'French' ? true : false } basic description={"Frensh"} />
-      <Slicer active={ languageContext.language.language === 'Chinise' ? true : false } basic description={"Chinise"} />
-      <Slicer active={ languageContext.language.language === 'Russian' ? true : false } basic description={"Russian"} />
-      <Slicer active={ languageContext.language.language === 'Portuguese' ? true : false } basic description={"Portuguese"} />
-      <Slicer active={ languageContext.language.language === 'Arabic' ? true : false } basic description={"Arabic"} />
+      <Slicer active={ languageContext.language.language === 'French' ? true : false } basic description={"Frensh"} onClick={onSelectFrench}/>
+      <Slicer active={ languageContext.language.language === 'Chinise' ? true : false } basic description={"Chinise"} onClick={onSelectChinise}/>
+      <Slicer active={ languageContext.language.language === 'Russian' ? true : false } basic description={"Russian"} onClick={onSelectRussian}/>
+      <Slicer active={ languageContext.language.language === 'Portuguese' ? true : false } basic description={"Portuguese"} onClick={onSelectPortuguese}/>
+      <Slicer active={ languageContext.language.language === 'Arabic' ? true : false } basic description={"Arabic"} onClick={onSelectArabic}/>
       <Hr />
     </Fragment>
   )

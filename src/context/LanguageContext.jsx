@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { English, Spanish, Italian } from './../data-base/';
+import { English, Spanish, Italian, French, Chinise, Russian, Portuguese, Arabic } from './../data-base/';
 
 export const LanguageContext = createContext();
 
@@ -9,9 +9,9 @@ export const LanguageContextProvider = ({ children }) => {
   const handleOnSelectLanguage = (languagePicked) => {
     setLanguage(languagePicked)
   };
-
+  
   return(
-    <LanguageContext.Provider value={{handleOnSelectLanguage, English, Spanish, Italian, language  }}>
+    <LanguageContext.Provider value={{handleOnSelectLanguage, English, Spanish, Italian, French, Chinise, Russian, Portuguese, Arabic, language  }}>
       { children }
     </LanguageContext.Provider>
   )
