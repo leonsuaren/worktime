@@ -19,25 +19,25 @@ const Notification = ({ title, day, time, location }) => {
   )
 };
 
-const FirstContact = () => {
+const FirstContact = ({ title, description }) => {
   return (
     <Fragment>
       <FirstContactContent>
-        <Title>First Contact</Title>
-        <Description>Vogliamo sentire da te.</Description>
+        <Title>{ title }</Title>
+        <Description>{ description }</Description>
       </FirstContactContent>
       <StyledAiOutlineCopy />
     </Fragment>
   )
 };
 
-export const ActionCard = ({ type, title, day, time, location }) => {
+export const ActionCard = ({ type, title, day, time, location, description }) => {
 
   return (
     <Fragment>
       <StyledActionCard>
         {
-          type === 'notification' ? <Notification title={title} day={day} time={time} location={location} /> : <FirstContact />
+          type === 'notification' ? <Notification title={title} day={day} time={time} location={location} /> : <FirstContact title={title} description={description}/>
         }
       </StyledActionCard>
     </Fragment>

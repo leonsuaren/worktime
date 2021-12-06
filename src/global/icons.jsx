@@ -15,7 +15,8 @@ import {
   AiOutlineDiff,
   AiOutlineVideoCamera,
   AiOutlineCalendar,
-  AiOutlineCopy
+  AiOutlineCopy,
+  AiOutlineBehance
 } from 'react-icons/ai';
 
 
@@ -92,6 +93,10 @@ export const StyledAiOutlineDiff = styled(AiOutlineDiff)`
 
 export const StyledAiOutlineVideoCamera = styled(AiOutlineVideoCamera)`
   ${ThemeIconStyled};
+`;
+
+export const StyledAiOutlineBehance = styled(AiOutlineBehance)`
+  ${ThemeIconStyled}
 `;
 
 export const StyledAiOutlineCalendar = styled(AiOutlineCalendar)`

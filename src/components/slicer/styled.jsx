@@ -1,8 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const onHover = ({ basic }) => {
+  if (basic) {
+  return (
+    css`
+    &:hover {
+      background: ${p => p.theme.iconColor};
+    }`
+    )
+  };
+};
 
 export const SlicerWrapper = styled.div`
   display: grid;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: ${p => p.basic ? '1fr' : '15% 70% 15%' };
   justify-items: center;
   align-content: center;
   width: 100%;
@@ -10,7 +21,8 @@ export const SlicerWrapper = styled.div`
   box-shadow: 0 0 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
   border: none;
   margin: 5px 0;
-  background: white;
+  background: ${p => p.active ? p.theme.iconColor : '#FFFFFF'};
+  ${onHover}
 `;
 
 export const Span = styled.p`

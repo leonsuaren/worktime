@@ -11,10 +11,10 @@ export const SlicerTitle = ({description, ...props}) => {
   )
 }
 
-export const Slicer = ({ icon, description, action, ...props }) => {
+export const Slicer = ({ icon, description, action, basic, active, ...props }) => {
   return (
     <Fragment>
-      <SlicerWrapper {...props}>
+      <SlicerWrapper active={active} basic={basic} {...props}>
         {icon}
         <Span>
           {description}
