@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../context';
 import { useLocation } from 'react-router-dom';
 import { Header } from './../components/header';
 import { Navbar } from './../components/navbar';
@@ -21,27 +22,31 @@ export const ResponsiveContainer = styled.div`
 `;
 
 export const PageLayout = ({ children }) => {
+  const languageContext = useContext(LanguageContext);
   const { pathname } = useLocation();
   let activePage;
   let headerLayout = false;
 
   if (pathname === '/') {
-    activePage = 'HOME';
+    activePage = `${languageContext.language.home}`;
   } else if (pathname === '/first-contact') {
     activePage = 'FIRST CONTACT';
     headerLayout = false;
   } else if (pathname === '/schedule') {
-    activePage = 'SCHEDULE'
+    activePage = `${languageContext.language.schedule}`;
   } else if (pathname === '/notifications') {
-    activePage = 'NOTIFICATIONS'
+    activePage = `${languageContext.language.notifications}`;
   } else if (pathname === '/channels') {
-    activePage = 'CHANNELS'
+    activePage = `${languageContext.language.channels}`;
   } else if (pathname === '/more') {
-    activePage = 'MORE'
+    activePage = `${languageContext.language.more}`;
   } else if (pathname === '/settings') {
     activePage = 'SETTINGS'
   } else if (pathname === '/settings/add-notifications') {
     activePage = 'SETTINGS';
+    headerLayout = false
+  } else if (pathname === '/settings/change-language') {
+    activePage = 'LANGUAGE';
     headerLayout = false
   }
 

@@ -9,7 +9,8 @@ import {
   StyledAiOutlineWarning,
   StyledAiOutlineUsergroupAdd,
   StyledAiOutlineDiff,
-  StyledAiOutlineVideoCamera
+  StyledAiOutlineVideoCamera,
+  StyledAiOutlineBehance
 } from '../../global';
 import { LinkTo } from './styled';
 
@@ -25,6 +26,9 @@ export const Settings = () => {
       </LinkTo>
       <Slicer icon={<StyledAiOutlineVideoCamera />} description={"Manage Channels"} action={<StyledAiFillCaretRight />} />
       <Slicer icon={<StyledAiFillExperiment />} description={"Change Theme"} action={<Toggle />} />
+      <LinkTo to='/settings/change-language'>
+        <Slicer icon={<StyledAiOutlineBehance />} description={"Change Language (temporal)"} action={<StyledAiFillCaretRight />} />
+      </LinkTo>
     </Fragment>
   )
 };
