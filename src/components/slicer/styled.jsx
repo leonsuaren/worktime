@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-const onHover = ({ basic }) => {
-  if (basic) {
+const onHover = ({ hoverOver }) => {
+  if (hoverOver) {
   return (
     css`
     &:hover {

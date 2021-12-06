@@ -17,12 +17,12 @@ export const FirstContact = () => {
     <Fragment>
       <Hr />
       <SlicerTitle description={languageContext.language.firstContact} />
-      <Slicer icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={<StyledAiFillCaretRight />} />
-      <Slicer icon={<StyledAiOutlineUsergroupAdd />} description={languageContext.language.mantSuggestionBox} action={<StyledAiFillCaretRight />} />
+      <Slicer hoverOver icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={<StyledAiFillCaretRight />} />
+      <Slicer hoverOver icon={<StyledAiOutlineUsergroupAdd />} description={languageContext.language.mantSuggestionBox} action={<StyledAiFillCaretRight />} />
       <Hr />
       <SlicerTitle description={languageContext.language.survey} />
-      <Slicer icon={<StyledAiOutlineReconciliation />} description={"Uplift Cards"} action={<StyledAiFillCaretRight />} />
-      <Slicer icon={<StyledAiFillDatabase />} description={"Chrismas Diner"} action={<StyledAiFillCaretRight />} />
+      <Slicer hoverOver icon={<StyledAiOutlineReconciliation />} description={"Uplift Cards"} action={<StyledAiFillCaretRight />} />
+      <Slicer hoverOver icon={<StyledAiFillDatabase />} description={"Chrismas Diner"} action={<StyledAiFillCaretRight />} />
     </Fragment>
   )
 };

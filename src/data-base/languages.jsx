@@ -26,7 +26,7 @@ export const Spanish = {
   firstContact: 'Primer Contacto',
   firstContactMsg: 'Queremos escucharte!!',
   suggestionBox: 'Caja de Sugerencias',
-  mantSuggestionBox: '',
+  mantSuggestionBox: 'Caja de Sugerencias de Mantenimiento',
   survey: 'Encuestas',
   nextShift: 'Siguiente Turno !!!'
 };
