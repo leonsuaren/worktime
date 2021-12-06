@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+
 import PropTypes from 'prop-types';
 import { Head, HeadTitle, HeadTime, HeadAvatar, DefaultContent, LinkTo, HeaderWrapper } from './index';
 import { Avatar } from './../avatar';
@@ -7,8 +8,10 @@ import { StyledFillSetting } from '../../global';
 import { ResponsiveContainer } from '../../global/PageLayout';
 
 export const Header = ({ page }) => {
+
   const dt = DateTime.now();
   let hour = dt.toLocaleString(DateTime.TIME_SIMPLE);
+  const userProvilege = localStorage.getItem('privilege');
 
   return (
     <Fragment>
@@ -18,9 +21,12 @@ export const Header = ({ page }) => {
             <HeadTime>{hour}</HeadTime>
             <HeadTitle data-test="title-component" isActive>{page ? page : 'Distribution Center'}</HeadTitle>
             <HeadAvatar>
-              <LinkTo to="/settings">
-                <StyledFillSetting />
-              </LinkTo>
+              {
+                userProvilege === 'Operator' ? <div></div> :
+                  <LinkTo to="/settings">
+                    <StyledFillSetting />
+                  </LinkTo>
+              }
               <Avatar><DefaultContent>RS</DefaultContent></Avatar>
             </HeadAvatar>
           </HeaderWrapper>

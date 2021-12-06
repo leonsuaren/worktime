@@ -41,13 +41,14 @@ export const PageLayout = ({ children }) => {
   } else if (pathname === '/more') {
     activePage = `${languageContext.language.more}`;
   } else if (pathname === '/settings') {
-    activePage = 'SETTINGS'
-  } else if (pathname === '/settings/add-notifications') {
     activePage = 'SETTINGS';
-    headerLayout = false
+    headerLayout = false;
+  } else if (pathname === '/more/add-notifications') {
+    activePage = 'SETTINGS';
+    headerLayout = false;
   } else if (pathname === '/settings/change-language') {
     activePage = 'LANGUAGE';
-    headerLayout = false
+    headerLayout = false;
   }
 
   return (

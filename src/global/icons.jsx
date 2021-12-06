@@ -8,7 +8,7 @@ import {
   AiOutlineMore,
   AiFillExperiment,
   AiFillCaretRight,
-  AiFillDatabase,
+  AiOutlineHdd,
   AiOutlineReconciliation,
   AiOutlineWarning,
   AiOutlineUsergroupAdd,
@@ -16,7 +16,11 @@ import {
   AiOutlineVideoCamera,
   AiOutlineCalendar,
   AiOutlineCopy,
-  AiOutlineBehance
+  AiOutlineBehance,
+  AiOutlineUser,
+  AiOutlineHeart,
+  AiOutlineRead,
+  AiOutlineSafety
 } from 'react-icons/ai';
 
 
@@ -71,7 +75,7 @@ export const StyledAiFillCaretRight = styled(AiFillCaretRight)`
   ${ThemeIconStyled};
 `;
 
-export const StyledAiFillDatabase = styled(AiFillDatabase)`
+export const StyledAiOutlineHdd = styled(AiOutlineHdd)`
   ${ThemeIconStyled};
 `;
 
@@ -96,6 +100,22 @@ export const StyledAiOutlineVideoCamera = styled(AiOutlineVideoCamera)`
 `;
 
 export const StyledAiOutlineBehance = styled(AiOutlineBehance)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineUser = styled(AiOutlineUser)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineHeart = styled(AiOutlineHeart)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineRead = styled(AiOutlineRead)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineSafety = styled(AiOutlineSafety)`
   ${ThemeIconStyled}
 `;
 

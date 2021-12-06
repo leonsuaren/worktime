@@ -56,6 +56,7 @@ export const AddNotifications = () => {
       </StyledActionCardInput>
       <Hr />
       <ActionCardInput type='notification' title={addTitle} day={addDay} time={addTime} location={addLocation}/>
+      <Hr />
     </Fragment>
   )
 };

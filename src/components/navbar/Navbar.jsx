@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+
 import { LanguageContext } from '../../context';
+
 import { useLocation } from 'react-router-dom';
 import { Navigation, NavigationBar, NavigationWrapper, LinkTo } from './index';
 import { Button } from '../button';
@@ -18,13 +20,15 @@ export const Navbar = () => {
   const { pathname } = useLocation();
   let showNavigationBar = false;
 
-  if(pathname === "/settings/add-notifications") {
+  if(pathname === "/more/add-notifications") {
     showNavigationBar = true
   } else if (pathname === "/first-contact") {
     showNavigationBar = true
   } else if (pathname === "/settings/change-language") {
     showNavigationBar = true
-  }
+  } else if (pathname === "/settings") {
+    showNavigationBar = true
+  } 
 
   return (
     <Navigation>
