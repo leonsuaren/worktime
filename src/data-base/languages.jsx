@@ -11,7 +11,12 @@ export const English = {
   suggestionBox: 'Suggestion Box',
   mantSuggestionBox: 'Maintenance Suggestion Box',
   survey: 'Survey',
-  nextShift: 'Next Shift!!'
+  nextShift: 'Next Shift!!',
+  personalInformation: 'Personal Information',
+  myBenefits: 'My Benefits',
+  trainingCenter: 'Training Center',
+  badges: 'Badges',
+  changeLanguage: 'Change Language'
 };
 
   
@@ -28,7 +33,12 @@ export const Spanish = {
   suggestionBox: 'Caja de Sugerencias',
   mantSuggestionBox: 'Caja de Sugerencias de Mantenimiento',
   survey: 'Encuestas',
-  nextShift: 'Siguiente Turno !!!'
+  nextShift: 'Siguiente Turno !!!',
+  personalInformation: 'Informacion Personal',
+  myBenefits: 'Mis Beneficios',
+  trainingCenter: 'Centro de Entrenamiento',
+  badges: 'Insignias',
+  changeLanguage: 'Cambiar Idioma'
 };
 
 export const Italian = {
@@ -44,7 +54,12 @@ export const Italian = {
   suggestionBox: 'Scatola Dei Suggerimenti',
   mantSuggestionBox: 'Scatola dei suggerimenti per la manutenzione',
   survey: 'Indagine',
-  nextShift: 'Prossimo Turno!!!'
+  nextShift: 'Prossimo Turno!!!',
+  personalInformation: 'Informazione Personale',
+  myBenefits: 'I Miei Vantaggi',
+  trainingCenter: 'Centro di Addestramento',
+  badges: 'Distintivi',
+  changeLanguage: 'Cambia Lingua'
 };
 
 export const French = {
@@ -60,7 +75,12 @@ export const French = {
   suggestionBox: 'Boîte á Auggestion',
   mantSuggestionBox: 'Boîte à suggestions d\'entretien',
   survey: 'Enquête',
-  nextShift: 'Prochaine Équipe !!!'
+  nextShift: 'Prochaine Équipe !!!',
+  personalInformation: 'Informations Personnelles',
+  myBenefits: 'Mes Avantages',
+  trainingCenter: 'Centre d\'entraînement',
+  badges: 'Insignes',
+  changeLanguage: 'Changer de Langue'
 };
 
 export const Chinise = {
@@ -76,7 +96,12 @@ export const Chinise = {
   suggestionBox: '建议箱',
   mantSuggestionBox: '维修意见箱',
   survey: '民意调查',
-  nextShift: '下一班！！！'
+  nextShift: '下一班！！！',
+  personalInformation: '个人信息',
+  myBenefits: '我的好处',
+  trainingCenter: '培训中心',
+  badges: '徽章',
+  changeLanguage: '改变语言'
 };
 
 export const Russian = {
@@ -92,7 +117,12 @@ export const Russian = {
   suggestionBox: 'Коробка предложений',
   mantSuggestionBox: 'Коробка с предложениями по техническому обслуживанию',
   survey: 'Опрос',
-  nextShift: 'Следующая смена !!!'
+  nextShift: 'Следующая смена !!!',
+  personalInformation: 'Персональные данные',
+  myBenefits: 'Мои преимущества',
+  trainingCenter: 'Учебный центр',
+  badges: 'Значки',
+  changeLanguage: 'Изменить язык'
 };
 
 export const Portuguese = {
@@ -108,7 +138,12 @@ export const Portuguese = {
   suggestionBox: 'Caixa De Sugestões',
   mantSuggestionBox: 'Caixa De Sugestões De Manutenção',
   survey: 'Enquete',
-  nextShift: 'Próximo Turno !!!'
+  nextShift: 'Próximo Turno !!!',
+  personalInformation: 'Informações Pessoais',
+  myBenefits: 'Meus Benefícios',
+  trainingCenter: 'Centro de Treinamento',
+  badges: 'Distintivos',
+  changeLanguage: 'Mudar Idioma'
 };
 
 export const Arabic = {
@@ -124,6 +159,11 @@ export const Arabic = {
   suggestionBox: 'صندوق الاقتراحات',
   mantSuggestionBox: 'صندوق اقتراحات الصيانة',
   survey: 'الدراسة الاستقصائية',
-  nextShift: 'التحول القادم'
+  nextShift: 'التحول القادم',
+  personalInformation: 'معلومات شخصية',
+  myBenefits: 'مزاياي',
+  trainingCenter: 'مركز تدريب',
+  badges: 'شارات',
+  changeLanguage: 'تغيير اللغة'
 };
 

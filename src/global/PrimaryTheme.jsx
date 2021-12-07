@@ -5,7 +5,8 @@ const theme = {
   navBarBackground: '#DCEAF9',
   fontColor: '#282b35',
   borderColor: '1px solid #CECECE',
-  iconColor: '#76b7e2'
+  iconColor: '#76b7e2',
+  disabled: '#DDDDDD'
 };
 
 export default theme;

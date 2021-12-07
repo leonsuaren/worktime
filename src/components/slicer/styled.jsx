@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 const onHover = ({ hoverOver }) => {
   if (hoverOver) {
-  return (
-    css`
+    return (
+      css`
     &:hover {
       background: ${p => p.theme.iconColor};
     }`
@@ -11,9 +11,27 @@ const onHover = ({ hoverOver }) => {
   };
 };
 
+const disabled = ({ disabled }) => {
+  if (disabled) {
+    return (
+      css`
+      background-color: ${p => p.theme.disabled}; 
+      box-shadow: 0 0 0 0;
+      &:hover {
+      background-color: ${p => p.theme.disabled}; 
+      }
+      >p {
+        color: #a09b9b;
+      }
+      `
+    )
+
+  }
+};
+
 export const SlicerWrapper = styled.div`
   display: grid;
-  grid-template-columns: ${p => p.basic ? '1fr' : '15% 70% 15%' };
+  grid-template-columns: ${p => p.basic ? '1fr' : '15% 70% 15%'};
   justify-items: center;
   align-content: center;
   width: 100%;
@@ -23,6 +41,7 @@ export const SlicerWrapper = styled.div`
   margin: 5px 0;
   background: ${p => p.active ? p.theme.iconColor : '#FFFFFF'};
   ${onHover}
+  ${disabled}
 `;
 
 export const Span = styled.p`

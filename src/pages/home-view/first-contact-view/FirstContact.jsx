@@ -3,7 +3,7 @@ import { LanguageContext } from '../../../context';
 import { SlicerTitle, Slicer } from '../../../components/slicer';
 import {
   StyledAiFillCaretRight,
-  StyledAiFillDatabase,
+  StyledAiOutlineHdd,
   StyledAiOutlineReconciliation,
   StyledAiOutlineUsergroupAdd,
   StyledAiOutlineDiff, Hr
@@ -22,7 +22,7 @@ export const FirstContact = () => {
       <Hr />
       <SlicerTitle description={languageContext.language.survey} />
       <Slicer hoverOver icon={<StyledAiOutlineReconciliation />} description={"Uplift Cards"} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver icon={<StyledAiFillDatabase />} description={"Chrismas Diner"} action={<StyledAiFillCaretRight />} />
+      <Slicer hoverOver icon={<StyledAiOutlineHdd />} description={"Chrismas Diner"} action={<StyledAiFillCaretRight />} />
     </Fragment>
   )
 };

@@ -8,7 +8,7 @@ import {
   AiOutlineMore,
   AiFillExperiment,
   AiFillCaretRight,
-  AiFillDatabase,
+  AiOutlineHdd,
   AiOutlineReconciliation,
   AiOutlineWarning,
   AiOutlineUsergroupAdd,
@@ -16,7 +16,11 @@ import {
   AiOutlineVideoCamera,
   AiOutlineCalendar,
   AiOutlineCopy,
-  AiOutlineBehance
+  AiOutlineBehance,
+  AiOutlineUser,
+  AiOutlineHeart,
+  AiOutlineRead,
+  AiOutlineSafety
 } from 'react-icons/ai';
 
 
@@ -27,6 +31,16 @@ const IconStyled = () => {
       color: ${p => p.theme.fontColor};
     `
   )
+};
+
+const Disabled = ({disabled}) => {
+  if (disabled) {
+    return (
+      css`
+      color: #a09b9b;
+      `
+    )
+  }
 };
 
 const ThemeIconStyled = () => {
@@ -65,37 +79,61 @@ export const StyledAiOutlineMore = styled(AiOutlineMore)`
 
 export const StyledAiFillExperiment = styled(AiFillExperiment)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiFillCaretRight = styled(AiFillCaretRight)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
-export const StyledAiFillDatabase = styled(AiFillDatabase)`
+export const StyledAiOutlineHdd = styled(AiOutlineHdd)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineReconciliation = styled(AiOutlineReconciliation)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineWarning = styled(AiOutlineWarning)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineUsergroupAdd = styled(AiOutlineUsergroupAdd)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineDiff = styled(AiOutlineDiff)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineVideoCamera = styled(AiOutlineVideoCamera)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineBehance = styled(AiOutlineBehance)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineUser = styled(AiOutlineUser)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineHeart = styled(AiOutlineHeart)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineRead = styled(AiOutlineRead)`
+  ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineSafety = styled(AiOutlineSafety)`
   ${ThemeIconStyled}
 `;
 
