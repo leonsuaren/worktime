@@ -4,7 +4,7 @@ export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
 
-  const userProvilege = localStorage.setItem('privilege', 'Operator');
+  const userProvilege = localStorage.setItem('privilege', 'Admon');
 
   return (
     <UserContext.Provider value={{ userProvilege }}>

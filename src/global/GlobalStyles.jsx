@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -12,20 +12,10 @@ export const GlobalStyle = createGlobalStyle`
 export const Hr = styled.hr`
   width: 10%;
   margin: 20px auto;
-
 `;
 
-// export const globalStyles = {
-//   pallete: {
-//     // background: '#fb6152',
-//     // navbar: '#ffffff',
-//     // alternativeBackground: '#CECECE',
-//     // primaryFont: '#666666',
-//     // secondaryFont: '#CECECE',
-//     // primaryButton: '#666666',
-//     // secondaryButton: '#CECECE',
-//     // disabledButton: '#EEEEEE',
-//     // disabledFont: '#666666'
-//   }
-// };
-
+export const globalStyles = {
+  disabled: '#DDDDDD',
+  darkSkeleton: '#AFAEAE',
+  ligthSkeleton: '#ccc9c9'
+}

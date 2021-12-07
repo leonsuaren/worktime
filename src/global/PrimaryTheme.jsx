@@ -6,7 +6,7 @@ const theme = {
   fontColor: '#282b35',
   borderColor: '1px solid #CECECE',
   iconColor: '#76b7e2',
-  disabled: '#DDDDDD'
+  disabled: '#DDDDDD',
 };
 
 export default theme;

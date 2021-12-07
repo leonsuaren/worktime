@@ -9,7 +9,7 @@ export const Settings = () => {
   return (
     <Fragment>
       <Hr />
-      <Slicer hoverOver icon={<StyledAiFillExperiment />} description={"Change Theme"} action={<Toggle />} />
+      <Slicer addSkeleton hoverOver icon={<StyledAiFillExperiment />} description={"Change Theme"} action={<Toggle />} />
       <Hr />
     </Fragment>
   )
