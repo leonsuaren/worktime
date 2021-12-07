@@ -33,6 +33,16 @@ const IconStyled = () => {
   )
 };
 
+const Disabled = ({disabled}) => {
+  if (disabled) {
+    return (
+      css`
+      color: #a09b9b;
+      `
+    )
+  }
+};
+
 const ThemeIconStyled = () => {
   return (
     css`
@@ -69,34 +79,42 @@ export const StyledAiOutlineMore = styled(AiOutlineMore)`
 
 export const StyledAiFillExperiment = styled(AiFillExperiment)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiFillCaretRight = styled(AiFillCaretRight)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineHdd = styled(AiOutlineHdd)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineReconciliation = styled(AiOutlineReconciliation)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineWarning = styled(AiOutlineWarning)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineUsergroupAdd = styled(AiOutlineUsergroupAdd)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineDiff = styled(AiOutlineDiff)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineVideoCamera = styled(AiOutlineVideoCamera)`
   ${ThemeIconStyled};
+  ${Disabled}
 `;
 
 export const StyledAiOutlineBehance = styled(AiOutlineBehance)`

@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link as ReactRouterDomLink } from 'react-router-dom';
 
-const Link = ({ isActive, children, disabled, ...props }) => {
-  console.log(disabled)
+const Link = ({ isActive, children, ...props }) => {
 
   return (
     <ReactRouterDomLink {...props}>

@@ -12,7 +12,6 @@ export const SlicerTitle = ({description, ...props}) => {
 }
 
 export const Slicer = ({ icon, description, action, basic, active, hoverOver, disabled, ...props }) => {
-  console.log(disabled);
   return (
     <Fragment>
       <SlicerWrapper active={active} basic={basic} hoverOver={hoverOver} disabled={disabled} {...props}>

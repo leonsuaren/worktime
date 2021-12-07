@@ -20,7 +20,7 @@ const disabled = ({ disabled }) => {
       &:hover {
       background-color: ${p => p.theme.disabled}; 
       }
-      >p, icon{
+      >p {
         color: #a09b9b;
       }
       `

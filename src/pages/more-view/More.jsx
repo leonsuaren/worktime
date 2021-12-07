@@ -23,6 +23,7 @@ import { LinkTo } from './styled';
 export const More = () => {
   const languageContext = useContext(LanguageContext);
   const userPrivilege = localStorage.getItem('privilege');
+  const disabled = userPrivilege === 'Admon' ? false : true;
 
   return (
     <Fragment>
@@ -45,23 +46,23 @@ export const More = () => {
       {
         userPrivilege === 'Operator' ? '' :
           <div>
-            <LinkTo to="" >
-              <Slicer hoverOver  icon={<StyledAiOutlineDiff />} description={"Manage Shifts"} action={<StyledAiFillCaretRight />} />
+            <LinkTo to='' disabled={disabled}  >
+              <Slicer disabled={disabled} hoverOver  icon={<StyledAiOutlineDiff disabled={disabled} />} description={"Manage Shifts"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
-            <LinkTo to="" >
-              <Slicer hoverOver  icon={<StyledAiOutlineUsergroupAdd />} description={"Add a New Associated"} action={<StyledAiFillCaretRight />} />
+            <LinkTo to='' disabled={disabled}  >
+              <Slicer disabled={disabled} hoverOver  icon={<StyledAiOutlineUsergroupAdd disabled={disabled}/>} description={"Add a New Associated"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
-            <LinkTo to="" >
-              <Slicer hoverOver  icon={<StyledAiOutlineHdd />} description={"Add a Card"} action={<StyledAiFillCaretRight />} />
+            <LinkTo to='' disabled={disabled}  >
+              <Slicer disabled={disabled} hoverOver  icon={<StyledAiOutlineHdd disabled={disabled}/>} description={"Add a Card"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
-            <LinkTo to="" >
-              <Slicer hoverOver  icon={<StyledAiOutlineReconciliation />} description={"Add a Survey"} action={<StyledAiFillCaretRight />} />
+            <LinkTo to='' disabled={disabled}  >
+              <Slicer disabled={disabled} hoverOver  icon={<StyledAiOutlineReconciliation disabled={disabled}/>} description={"Add a Survey"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
-            <LinkTo to='/more/add-notifications' >
-              <Slicer hoverOver  icon={<StyledAiOutlineWarning />} description={"Add a Notification"} action={<StyledAiFillCaretRight />} />
+            <LinkTo to='/more/add-notifications' disabled={disabled}>
+              <Slicer disabled={disabled} hoverOver  icon={<StyledAiOutlineWarning disabled={disabled}/>} description={"Add a Notification"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
-            <LinkTo to='' >
-              <Slicer hoverOver  icon={<StyledAiOutlineVideoCamera />} description={"Manage Channels"} action={<StyledAiFillCaretRight />} />
+            <LinkTo to='' disabled={disabled} >
+              <Slicer disabled={disabled} hoverOver  icon={<StyledAiOutlineVideoCamera disabled={disabled}/>} description={"Manage Channels"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
             <Hr />
           </div>
