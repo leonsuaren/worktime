@@ -49,14 +49,14 @@ export const ChangeLanguage = () => {
   return (
     <Fragment>
       <Hr />
-      <Slicer active={ languageContext.language.language === 'English' ? true : false } basic hoverOver description={"English"} onClick={onSelectEnglish}/>
-      <Slicer active={ languageContext.language.language === 'Spanish' ? true : false } basic hoverOver description={"Spanish"} onClick={onSelectSpanish}/>
-      <Slicer active={ languageContext.language.language === 'Italian' ? true : false } basic hoverOver description={"Italian"} onClick={onSelectItalian}/>
-      <Slicer active={ languageContext.language.language === 'French' ? true : false } basic hoverOver description={"Frensh"} onClick={onSelectFrench}/>
-      <Slicer active={ languageContext.language.language === 'Chinise' ? true : false } basic hoverOver description={"Chinise"} onClick={onSelectChinise}/>
-      <Slicer active={ languageContext.language.language === 'Russian' ? true : false } basic hoverOver description={"Russian"} onClick={onSelectRussian}/>
-      <Slicer active={ languageContext.language.language === 'Portuguese' ? true : false } basic hoverOver description={"Portuguese"} onClick={onSelectPortuguese}/>
-      <Slicer active={ languageContext.language.language === 'Arabic' ? true : false } basic hoverOver description={"Arabic"} onClick={onSelectArabic}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'English' ? true : false } basic hoverOver description={"English"} onClick={onSelectEnglish}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'Spanish' ? true : false } basic hoverOver description={"Spanish"} onClick={onSelectSpanish}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'Italian' ? true : false } basic hoverOver description={"Italian"} onClick={onSelectItalian}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'French' ? true : false } basic hoverOver description={"Frensh"} onClick={onSelectFrench}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'Chinise' ? true : false } basic hoverOver description={"Chinise"} onClick={onSelectChinise}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'Russian' ? true : false } basic hoverOver description={"Russian"} onClick={onSelectRussian}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'Portuguese' ? true : false } basic hoverOver description={"Portuguese"} onClick={onSelectPortuguese}/>
+      <Slicer addSkeleton title active={ languageContext.language.language === 'Arabic' ? true : false } basic hoverOver description={"Arabic"} onClick={onSelectArabic}/>
       <Hr />
     </Fragment>
   )

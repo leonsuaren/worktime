@@ -16,13 +16,13 @@ export const FirstContact = () => {
   return(
     <Fragment>
       <Hr />
-      <SlicerTitle description={languageContext.language.firstContact} />
-      <Slicer hoverOver icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver icon={<StyledAiOutlineUsergroupAdd />} description={languageContext.language.mantSuggestionBox} action={<StyledAiFillCaretRight />} />
+      <SlicerTitle addSkeleton title description={languageContext.language.firstContact} />
+      <Slicer addSkeleton hoverOver icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={<StyledAiFillCaretRight />} />
+      <Slicer addSkeleton hoverOver icon={<StyledAiOutlineUsergroupAdd />} description={languageContext.language.mantSuggestionBox} action={<StyledAiFillCaretRight />} />
       <Hr />
-      <SlicerTitle description={languageContext.language.survey} />
-      <Slicer hoverOver icon={<StyledAiOutlineReconciliation />} description={"Uplift Cards"} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver icon={<StyledAiOutlineHdd />} description={"Chrismas Diner"} action={<StyledAiFillCaretRight />} />
+      <SlicerTitle addSkeleton title description={languageContext.language.survey} />
+      <Slicer addSkeleton hoverOver icon={<StyledAiOutlineReconciliation />} description={"Uplift Cards"} action={<StyledAiFillCaretRight />} />
+      <Slicer addSkeleton hoverOver icon={<StyledAiOutlineHdd />} description={"Chrismas Diner"} action={<StyledAiFillCaretRight />} />
     </Fragment>
   )
 };

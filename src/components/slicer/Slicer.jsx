@@ -1,26 +1,49 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { SlicerWrapper, Span, SlicerTitleWrapper } from './styled';
+import { SlicerSkeleton } from '../skeleton';
 
-export const SlicerTitle = ({description, ...props}) => {
-  return(
+export const SlicerTitle = ({ description, addSkeleton, title, ...props }) => {
+  const [skeleton, setSkeleton] = useState(true);
+  const skeletonTime = () => {
+    setTimeout(() => setSkeleton(false), 2000);
+  }
+  useEffect(() => {
+    skeletonTime();
+  }, [skeleton]);
+  return (
     <Fragment>
-      <SlicerTitleWrapper {...props}>
-        <p>{ description }</p>
-      </SlicerTitleWrapper>
+      {
+        skeleton && addSkeleton ? <SlicerSkeleton title /> :
+        <SlicerTitleWrapper {...props} addSkeleton>
+        <p>{description}</p>
+        </SlicerTitleWrapper>
+      }
     </Fragment>
   )
 }
 
-export const Slicer = ({ icon, description, action, basic, active, hoverOver, disabled, ...props }) => {
+export const Slicer = ({ icon, description, action, basic, active, hoverOver, disabled, addSkeleton, title, ...props }) => {
+  const [skeleton, setSkeleton] = useState(true);
+  const skeletonTime = () => {
+    setTimeout(() => setSkeleton(false), 2000);
+  }
+
+  useEffect(() => {
+    skeletonTime();
+  }, [skeleton]);
+
   return (
     <Fragment>
-      <SlicerWrapper active={active} basic={basic} hoverOver={hoverOver} disabled={disabled} {...props}>
-        {icon}
-        <Span>
-          {description}
-        </Span>
-        {action}
-      </SlicerWrapper>
+      {
+        skeleton && addSkeleton ? <SlicerSkeleton title={title}/> :
+          <SlicerWrapper active={active} basic={basic} hoverOver={hoverOver} disabled={disabled} {...props}>
+            {icon}
+            <Span>
+              {description}
+            </Span>
+            {action}
+          </SlicerWrapper>
+      }
     </Fragment>
   )
 };

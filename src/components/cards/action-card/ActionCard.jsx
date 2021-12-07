@@ -1,4 +1,7 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+
+import { Skeleton } from '../../skeleton';
+
 import {
   StyledActionCard, NotificationContent, FirstContactContent, Title, Description, Day, Time, Location,
   TitleInput, DayInput, TimeInput, LocationInput
@@ -23,23 +26,34 @@ const FirstContact = ({ title, description }) => {
   return (
     <Fragment>
       <FirstContactContent>
-        <Title>{ title }</Title>
-        <Description>{ description }</Description>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
       </FirstContactContent>
       <StyledAiOutlineCopy />
     </Fragment>
   )
 };
 
-export const ActionCard = ({ type, title, day, time, location, description }) => {
+export const ActionCard = ({ type, title, day, time, location, description, addSkeleton }) => {
+  const [skeleton, setSkeleton] = useState(true);
+  const skeletonTime = () => {
+    setTimeout(() => { setSkeleton(false) }, 2000);
+  }
+
+  useEffect(() => {
+    skeletonTime();
+  }, [skeleton]);
+
 
   return (
     <Fragment>
+    {skeleton && addSkeleton ? <Skeleton fullSize={type === 'notification' ? true : false}/> :
       <StyledActionCard>
-        {
-          type === 'notification' ? <Notification title={title} day={day} time={time} location={location} /> : <FirstContact title={title} description={description}/>
-        }
+      {
+        type === 'notification' ? <Notification title={title} day={day} time={time} location={location} /> : <FirstContact title={title} description={description} />
+      }
       </StyledActionCard>
+    }
     </Fragment>
   )
 };
@@ -49,10 +63,10 @@ export const ActionCardInput = ({ title, day, time, location }) => {
     <Fragment>
       <StyledActionCard>
         <NotificationContent>
-          <TitleInput type="text" name="title" value={title} disabled/>
-          <DayInput type="text" name="day" value={day} disabled/>
-          <TimeInput type="text" name="time" value={time} disabled/>
-          <LocationInput type="text" name="location" value={location} disabled/>
+          <TitleInput type="text" name="title" value={title} disabled />
+          <DayInput type="text" name="day" value={day} disabled />
+          <TimeInput type="text" name="time" value={time} disabled />
+          <LocationInput type="text" name="location" value={location} disabled />
         </NotificationContent>
         <StyledAiOutlineCalendar />
       </StyledActionCard>

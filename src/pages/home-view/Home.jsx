@@ -1,6 +1,8 @@
 import React, { Fragment, useContext } from 'react';
+
 import { AddNotificationContext } from '../../context';
 import { LanguageContext } from '../../context';
+
 import { ActionCard } from '../../components/cards/action-card';
 import { LinkTo } from './styled';
 
@@ -12,11 +14,11 @@ export const Home = () => {
 
   return (
     <Fragment>
-      <ActionCard type='notification' title={languageContext.language.nextShift} day="Tomorrow Dec 5" time="5:00 AM - 3:00 PM" location="CFC" />
+      <ActionCard addSkeleton type='notification' title={languageContext.language.nextShift} day="Tomorrow Dec 5" time="5:00 AM - 3:00 PM" location="CFC" />
       <LinkTo to="first-contact">
-        <ActionCard title={languageContext.language.firstContact} description={languageContext.language.firstContactMsg} />
+        <ActionCard addSkeleton title={languageContext.language.firstContact} description={languageContext.language.firstContactMsg} />
       </LinkTo>
-      {showNotification ? <ActionCard type='notification' title={fullNotification.addTitle} day={fullNotification.addDay} time={fullNotification.addTime} location={fullNotification.addLocation}/> : ''}
+      {showNotification ? <ActionCard addSkeleton type='notification' title={fullNotification.addTitle} day={fullNotification.addDay} time={fullNotification.addTime} location={fullNotification.addLocation} /> : ''}
     </Fragment>
   )
 };
