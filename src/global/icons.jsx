@@ -20,7 +20,8 @@ import {
   AiOutlineUser,
   AiOutlineHeart,
   AiOutlineRead,
-  AiOutlineSafety
+  AiOutlineSafety,
+  AiOutlineLeft
 } from 'react-icons/ai';
 
 
@@ -135,6 +136,12 @@ export const StyledAiOutlineRead = styled(AiOutlineRead)`
 
 export const StyledAiOutlineSafety = styled(AiOutlineSafety)`
   ${ThemeIconStyled}
+`;
+
+export const StyledAiOutlineLeft = styled(AiOutlineLeft)`
+  ${IconStyled};
+  align-self: flex-end;
+  cursor: pointer;
 `;
 
 export const StyledAiOutlineCalendar = styled(AiOutlineCalendar)`
