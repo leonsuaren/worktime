@@ -23,7 +23,7 @@ import { LinkTo } from './styled';
 export const More = () => {
   const languageContext = useContext(LanguageContext);
   const userPrivilege = localStorage.getItem('privilege');
-  const disabled = userPrivilege === 'Admon' ? false : true;
+  const disabled = userPrivilege === 'Admin' ? false : true;
 
   return (
     <Fragment>
@@ -58,7 +58,7 @@ export const More = () => {
             <LinkTo to='' disabled={disabled}  >
               <Slicer disabled={disabled} addSkeleton hoverOver  icon={<StyledAiOutlineReconciliation disabled={disabled}/>} description={"Add a Survey"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
-            <LinkTo to='/more/add-notifications' disabled={disabled}>
+            <LinkTo to='/settings/add-notifications' disabled={disabled}>
               <Slicer disabled={disabled} addSkeleton hoverOver  icon={<StyledAiOutlineWarning disabled={disabled}/>} description={"Add a Notification"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
             <LinkTo to='' disabled={disabled} >

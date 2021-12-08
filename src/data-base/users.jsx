@@ -1,5 +1,5 @@
 export const Users = [
-  { privileges: 'Admon' },
+  { privileges: 'Admin' },
   { privileges: 'Supervisor' },
   { privileges: 'Operator' }
 ]

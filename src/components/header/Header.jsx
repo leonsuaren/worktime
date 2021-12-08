@@ -20,7 +20,7 @@ export const Header = ({ page }) => {
     history(-1);
   };
 
-  if(pathname === "/more/add-notifications") {
+  if (pathname === "/settings/add-notifications") {
     showNavigationBar = true
   } else if (pathname === "/first-contact") {
     showNavigationBar = true
@@ -28,7 +28,7 @@ export const Header = ({ page }) => {
     showNavigationBar = true
   } else if (pathname === "/settings") {
     showNavigationBar = true
-  } 
+  }
 
   return (
     <Fragment>
@@ -44,10 +44,11 @@ export const Header = ({ page }) => {
             <HeadTitle data-test="title-component" isActive>{page ? page : 'Distribution Center'}</HeadTitle>
             <HeadAvatar>
               {
-                userProvilege === 'Operator' || userProvilege === 'Supervisor' ? <div></div> :
+                userProvilege === 'Admin' ?
                   <LinkTo to="/settings">
                     <StyledFillSetting />
-                  </LinkTo>
+                  </LinkTo> :
+                  <div></div>
               }
               <Avatar><DefaultContent>RS</DefaultContent></Avatar>
             </HeadAvatar>
