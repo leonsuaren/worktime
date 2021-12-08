@@ -49,6 +49,8 @@ export const PageLayout = ({ children }) => {
   } else if (pathname === '/settings/change-language') {
     activePage = 'LANGUAGE';
     headerLayout = false;
+  } else if (pathname === '/login') {
+    activePage = '';
   }
 
   return (

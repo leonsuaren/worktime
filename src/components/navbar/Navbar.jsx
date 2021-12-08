@@ -28,7 +28,9 @@ export const Navbar = () => {
     showNavigationBar = true
   } else if (pathname === "/settings") {
     showNavigationBar = true
-  } 
+  } else if (pathname === "/login") {
+    showNavigationBar = true
+  }
 
   return (
     <Navigation>

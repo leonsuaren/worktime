@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${p => p.theme.bodyBackground};
     font-family: 'Montserrat';
     margin: 0;
+    padding: 0;
     color: #666666;
   }
 `;

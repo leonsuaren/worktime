@@ -32,7 +32,6 @@ function App() {
               <PageLayout>
                 <AddNotificationContextProvider>
                   <Routes>
-                    <Route path='login' element={<LogIn />} />
                     <Route exact path='/' element={<Home />} />
                     <Route path='schedule' element={<Schedule />} />
                     <Route path='channels' element={<Channels />} />
