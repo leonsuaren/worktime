@@ -58,9 +58,19 @@ export const ActionCard = ({ type, title, day, time, location, description, addS
   )
 };
 
-export const ActionCardInput = ({ title, day, time, location }) => {
+export const ActionCardInput = ({ title, day, time, location, addSkeleton }) => {
+  const [skeleton, setSkeleton] = useState(true);
+  const skeletonTime = () => {
+    setTimeout(() => { setSkeleton(false) }, 2000);
+  }
+
+  useEffect(() => {
+    skeletonTime();
+  }, [skeleton]);
+
   return (
     <Fragment>
+    {skeleton && addSkeleton ? <Skeleton fullSize /> : 
       <StyledActionCard>
         <NotificationContent>
           <TitleInput type="text" name="title" value={title} disabled />
@@ -70,6 +80,7 @@ export const ActionCardInput = ({ title, day, time, location }) => {
         </NotificationContent>
         <StyledAiOutlineCalendar />
       </StyledActionCard>
+    }
     </Fragment>
   )
 };

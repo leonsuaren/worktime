@@ -25,7 +25,10 @@ export const HeadTitle = styled.h3`
 export const HeadTime = styled.div`
   color: ${p => p.theme.fontColor};
   font-size: .8rem;
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: start;
+  align-items: start;
   margin: 0;
   font-weight: 600;
 `;
