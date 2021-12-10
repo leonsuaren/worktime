@@ -20,6 +20,7 @@ import { Settings } from './pages/settings-view';
 import { FirstContact } from './pages/home-view/first-contact-view';
 import { ChangeLanguage } from './pages/settings-view/change-language';
 import { NotFound } from './pages/not-found';
+import { Loading } from './pages/loading';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
                     <Route path='settings/add-notifications' element={<AddNotifications />} />
                     <Route path='first-contact' element={<FirstContact />} />
                     <Route path='*' element={<NotFound />} />
+                    <Route path='temporal' element={<Loading />}/>
                   </Routes>
                 </AddNotificationContextProvider>
               </PageLayout>
