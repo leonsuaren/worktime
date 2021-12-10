@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
 import { Head, HeadTitle, HeadTime, HeadAvatar, DefaultContent, LinkTo, StyledHeader, HeaderWrapper } from './index';
 import { Avatar } from './../avatar';
 import { DateTime } from 'luxon';
@@ -21,7 +20,7 @@ export const Header = ({ page }) => {
   };
 
    if (pathname === '/login') {
-    showNavigationBar = true
+    showNavigationBar = true;
   }
 
   return (
@@ -51,8 +50,4 @@ export const Header = ({ page }) => {
       </HeaderWrapper>
     </Fragment>
   );
-};
-
-Header.propTypes = {
-  page: PropTypes.string.isRequired
 };
