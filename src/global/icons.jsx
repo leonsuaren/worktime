@@ -21,7 +21,26 @@ import {
   AiOutlineHeart,
   AiOutlineRead,
   AiOutlineSafety,
-  AiOutlineLeft
+  AiOutlineLeft,
+  AiOutlineTeam,
+  AiOutlineBug,
+  AiOutlineAudio,
+  AiOutlineSafetyCertificate,
+  AiOutlineSelect,
+  AiOutlineSound,
+  AiOutlineLink,
+  AiOutlineApartment,
+  AiOutlineExclamation,
+  AiOutlineSearch,
+  AiOutlineCrown,
+  AiOutlineBook,
+  AiOutlineStar,
+  AiOutlineSnippets,
+  AiOutlineToTop,
+  AiOutlineSketch,
+  AiOutlineDashboard,
+  AiOutlineFire,
+  AiOutlineBgColors
 } from 'react-icons/ai';
 
 
@@ -83,7 +102,102 @@ export const StyledAiFillExperiment = styled(AiFillExperiment)`
   ${Disabled}
 `;
 
+export const StyledAiOutlineBgColors = styled(AiOutlineBgColors)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineToTop = styled(AiOutlineToTop)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineFire = styled(AiOutlineFire)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineDashboard = styled(AiOutlineDashboard)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineSketch = styled(AiOutlineSketch)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineSnippets = styled(AiOutlineSnippets)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineBook = styled(AiOutlineBook)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineStar= styled(AiOutlineStar)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineCrown = styled(AiOutlineCrown)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineSearch = styled(AiOutlineSearch)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineApartment = styled(AiOutlineApartment)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineExclamation = styled(AiOutlineExclamation)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineLink = styled(AiOutlineLink)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineAudio = styled(AiOutlineAudio)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineBug = styled(AiOutlineBug)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineSafetyCertificate = styled(AiOutlineSafetyCertificate)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineSound = styled(AiOutlineSound)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineSelect = styled(AiOutlineSelect)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
 export const StyledAiFillCaretRight = styled(AiFillCaretRight)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineTeam = styled(AiOutlineTeam)`
   ${ThemeIconStyled};
   ${Disabled}
 `;
