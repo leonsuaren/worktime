@@ -1,10 +1,11 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
     background: ${p => p.theme.bodyBackground};
     font-family: 'Montserrat';
     margin: 0;
+    padding: 0;
     color: #666666;
   }
 `;

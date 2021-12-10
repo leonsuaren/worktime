@@ -10,6 +10,7 @@ import { PageLayout } from './global';
 import { GlobalStyle } from './global/GlobalStyles';
 
 import { Home } from './pages/home-view';
+import { LogIn } from './pages/log-in';
 import { Schedule } from './pages/schedule-view';
 import { Channels } from './pages/channels-view';
 import { Notifications } from './pages/notifications-view';
@@ -19,13 +20,14 @@ import { Settings } from './pages/settings-view';
 import { FirstContact } from './pages/home-view/first-contact-view';
 import { ChangeLanguage } from './pages/settings-view/change-language';
 
+
 function App() {
   return (
     <Fragment>
       <UserContextProvider>
         <Theme theme>
-          <GlobalStyle />
           <Router>
+            <GlobalStyle />
             <LanguageContextProvider>
               <PageLayout>
                 <AddNotificationContextProvider>
@@ -36,9 +38,9 @@ function App() {
                     <Route path='notifications' element={<Notifications />} />
                     <Route path='more' element={<More />} />
                     <Route path='settings' element={<Settings />} />
-                    <Route path='more/add-notifications' element={<AddNotifications />} />
-                    <Route path='first-contact' element={<FirstContact />} />
                     <Route path='settings/change-language' element={<ChangeLanguage />} />
+                    <Route path='settings/add-notifications' element={<AddNotifications />} />
+                    <Route path='first-contact' element={<FirstContact />} />
                   </Routes>
                 </AddNotificationContextProvider>
               </PageLayout>

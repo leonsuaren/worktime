@@ -43,12 +43,14 @@ export const PageLayout = ({ children }) => {
   } else if (pathname === '/settings') {
     activePage = 'SETTINGS';
     headerLayout = false;
-  } else if (pathname === '/more/add-notifications') {
+  } else if (pathname === '/settings/add-notifications') {
     activePage = 'SETTINGS';
     headerLayout = false;
   } else if (pathname === '/settings/change-language') {
     activePage = 'LANGUAGE';
     headerLayout = false;
+  } else if (pathname === '/login') {
+    activePage = '';
   }
 
   return (

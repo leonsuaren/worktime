@@ -20,7 +20,7 @@ export const Navbar = () => {
   const { pathname } = useLocation();
   let showNavigationBar = false;
 
-  if(pathname === "/more/add-notifications") {
+  if(pathname === "/settings/add-notifications") {
     showNavigationBar = true
   } else if (pathname === "/first-contact") {
     showNavigationBar = true
@@ -28,7 +28,9 @@ export const Navbar = () => {
     showNavigationBar = true
   } else if (pathname === "/settings") {
     showNavigationBar = true
-  } 
+  } else if (pathname === "/login") {
+    showNavigationBar = true
+  }
 
   return (
     <Navigation>

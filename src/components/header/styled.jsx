@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link as ReactRouterDomLink } from 'react-router-dom';
 
+export const HeaderWrapper = styled.div`
+    display: ${p => p.isActive ? 'none' : 'flex'};
+`;
+
 export const Head =  styled.div`
   width: 100vw;
   height: 80px;
@@ -9,7 +13,7 @@ export const Head =  styled.div`
   background: ${p => p.theme.headerBackground};
 `;
 
-export const HeaderWrapper = styled.div`
+export const StyledHeader = styled.div`
   display: grid;
   grid-template-columns: 20% 60% 20%;
 `;
