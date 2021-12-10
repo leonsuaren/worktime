@@ -217,6 +217,11 @@ export const StyledAiOutlineWarning = styled(AiOutlineWarning)`
   ${Disabled}
 `;
 
+export const StyledNotFoundWarning = styled(AiOutlineWarning)`
+  ${ThemeIconStyled};
+  font-size: 150px;
+`;
+
 export const StyledAiOutlineUsergroupAdd = styled(AiOutlineUsergroupAdd)`
   ${ThemeIconStyled};
   ${Disabled}

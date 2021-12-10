@@ -19,6 +19,7 @@ import { More } from './pages/more-view';
 import { Settings } from './pages/settings-view';
 import { FirstContact } from './pages/home-view/first-contact-view';
 import { ChangeLanguage } from './pages/settings-view/change-language';
+import { NotFound } from './pages/not-found';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
                     <Route path='settings/change-language' element={<ChangeLanguage />} />
                     <Route path='settings/add-notifications' element={<AddNotifications />} />
                     <Route path='first-contact' element={<FirstContact />} />
+                    <Route path='*' element={<NotFound />} />
                   </Routes>
                 </AddNotificationContextProvider>
               </PageLayout>
