@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
-import { LoadingWrapper, LoadingContent } from './styled';
+import { LoadingWrapper, LoadingContent, Work, Time } from './styled';
+import { Brand } from '../../components/brand';
 
 export const Loading = () => {
   return(
     <Fragment>
       <LoadingWrapper>
         <LoadingContent>
-          brand
+          <Work>Work</Work>
+          <Brand />
+          <Time>Time</Time>
         </LoadingContent>
       </LoadingWrapper>
     </Fragment>

@@ -19,3 +19,17 @@ export const LoadingContent = styled.div`
   min-width: 100px;
   min-height: 100px;
 `;
+
+export const Work = styled.h1`
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  margin-right: 5px;
+  font-family: system-ui;
+`;
+
+export const Time = styled.h1`
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  margin-left: 5px;
+  font-family: system-ui;
+`;

@@ -44,7 +44,6 @@ function App() {
                     <Route path='settings/add-notifications' element={<AddNotifications />} />
                     <Route path='first-contact' element={<FirstContact />} />
                     <Route path='*' element={<NotFound />} />
-                    <Route path='temporal' element={<Loading />}/>
                   </Routes>
                 </AddNotificationContextProvider>
               </PageLayout>
