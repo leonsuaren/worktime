@@ -1,24 +1,48 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import { LanguageContext } from '../../../context';
 import { SlicerTitle, Slicer } from '../../../components/slicer';
+import { InformativeBox } from '../../../components/informative-box';
+import { ButtonStyled } from './styled';
 import {
+  StyledAiOutlineCaretDown,
+  StyledAiOutlineCaretUp,
   StyledAiFillCaretRight,
   StyledAiOutlineHdd,
   StyledAiOutlineReconciliation,
-  StyledAiOutlineUsergroupAdd,
+  StyledAiFillTool,
   StyledAiOutlineDiff, Hr
 } from './../../../global';
 
 export const FirstContact = () => {
   const languageContext = useContext(LanguageContext);
+  const [showSuggestionBox, setShowSuggestionBox] = useState(false);
+  const [ showMaintenanceBox, setShowMaintenanceBox ] = useState(false);
+
+  const handleOnShowSuggestionBox = (test) => {
+    setShowSuggestionBox(test);
+  };
+
+  const handleOnShowMaintenanceBox = (test) => {
+    setShowMaintenanceBox(test);
+  };
 
 
-  return(
+  return (
     <Fragment>
       <Hr />
       <SlicerTitle addSkeleton title description={languageContext.language.firstContact} />
-      <Slicer addSkeleton hoverOver icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={<StyledAiFillCaretRight />} />
-      <Slicer addSkeleton hoverOver icon={<StyledAiOutlineUsergroupAdd />} description={languageContext.language.mantSuggestionBox} action={<StyledAiFillCaretRight />} />
+      <ButtonStyled onClick={handleOnShowSuggestionBox}>
+        <Slicer box addSkeleton icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={showSuggestionBox ? <StyledAiOutlineCaretUp /> : <StyledAiOutlineCaretDown/>} />
+      </ButtonStyled>
+      {
+        showSuggestionBox ? <InformativeBox description={"Please! Leave you Suggestion"} type={'Suggestion'} handleOnShowSuggestionBox={handleOnShowSuggestionBox}/> : ''
+      }
+      <ButtonStyled onClick={handleOnShowMaintenanceBox}>
+        <Slicer box addSkeleton icon={<StyledAiFillTool />} description={languageContext.language.maintSuggestionBox} action={showMaintenanceBox ? <StyledAiOutlineCaretUp /> : <StyledAiOutlineCaretDown/>} />
+      </ButtonStyled>
+      {
+        showMaintenanceBox ? <InformativeBox description={"Please! Leave your Maintenance Suggestion"} type={'Maintenance'} handleOnShowMaintenanceBox={handleOnShowMaintenanceBox}/> : ''
+      }
       <Hr />
       <SlicerTitle addSkeleton title description={languageContext.language.survey} />
       <Slicer addSkeleton hoverOver icon={<StyledAiOutlineReconciliation />} description={"Uplift Cards"} action={<StyledAiFillCaretRight />} />

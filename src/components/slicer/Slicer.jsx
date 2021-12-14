@@ -22,7 +22,7 @@ export const SlicerTitle = ({ description, addSkeleton, title, ...props }) => {
   )
 }
 
-export const Slicer = ({ icon, description, action, basic, active, hoverOver, disabled, addSkeleton, title, ...props }) => {
+export const Slicer = ({ icon, description, action, basic, active, hoverOver, disabled, addSkeleton, title, box, ...props }) => {
   const [skeleton, setSkeleton] = useState(true);
   const skeletonTime = () => {
     setTimeout(() => setSkeleton(false), 2000);
@@ -36,7 +36,7 @@ export const Slicer = ({ icon, description, action, basic, active, hoverOver, di
     <Fragment>
       {
         skeleton && addSkeleton ? <SlicerSkeleton title={title}/> :
-          <SlicerWrapper active={active} basic={basic} hoverOver={hoverOver} disabled={disabled} {...props}>
+          <SlicerWrapper box={box} active={active} basic={basic} hoverOver={hoverOver} disabled={disabled} {...props}>
             {icon}
             <Span>
               {description}

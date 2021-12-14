@@ -1,0 +1,1 @@
+export { InformativeBox } from './InformativeBox';

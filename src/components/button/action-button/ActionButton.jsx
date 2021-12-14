@@ -1,8 +1,8 @@
 import React from 'react';
 import { ActionButtonStyled, ButtonTextStyled } from './styled'; 
 
-export const ActionButton = ({ text, ...props }) => {
+export const ActionButton = ({ cancel, text, ...props }) => {
   return(
-    <ActionButtonStyled {...props}><ButtonTextStyled>{ text }</ButtonTextStyled></ActionButtonStyled>
+    <ActionButtonStyled {...props} cancel={cancel}><ButtonTextStyled>{ text }</ButtonTextStyled></ActionButtonStyled>
   )
 };
