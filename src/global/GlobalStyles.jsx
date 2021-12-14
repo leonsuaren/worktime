@@ -18,5 +18,5 @@ export const Hr = styled.hr`
 export const globalStyles = {
   disabled: '#DDDDDD',
   darkSkeleton: '#AFAEAE',
-  ligthSkeleton: '#ccc9c9'
+  ligthSkeleton: '#ccc9c9',
 }

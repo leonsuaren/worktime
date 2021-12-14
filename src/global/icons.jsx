@@ -40,7 +40,10 @@ import {
   AiOutlineSketch,
   AiOutlineDashboard,
   AiOutlineFire,
-  AiOutlineBgColors
+  AiOutlineBgColors,
+  AiOutlineCaretDown,
+  AiOutlineCaretUp,
+  AiFillTool
 } from 'react-icons/ai';
 
 
@@ -102,7 +105,22 @@ export const StyledAiFillExperiment = styled(AiFillExperiment)`
   ${Disabled}
 `;
 
+export const StyledAiFillTool = styled(AiFillTool)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
 export const StyledAiOutlineBgColors = styled(AiOutlineBgColors)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineCaretDown = styled(AiOutlineCaretDown)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineCaretUp = styled(AiOutlineCaretUp)`
   ${ThemeIconStyled};
   ${Disabled}
 `;

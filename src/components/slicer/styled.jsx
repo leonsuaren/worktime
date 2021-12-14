@@ -38,7 +38,7 @@ export const SlicerWrapper = styled.div`
   min-height: 40px;
   box-shadow: 0 0 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
   border: none;
-  margin: 5px 0;
+  margin: 5px ${p => p.box ? 0 : '5px'} 0 0;
   background: ${p => p.active ? p.theme.iconColor : '#FFFFFF'};
   ${onHover}
   ${disabled}
