@@ -18,13 +18,14 @@ export const FirstContact = () => {
   const [showSuggestionBox, setShowSuggestionBox] = useState(false);
   const [ showMaintenanceBox, setShowMaintenanceBox ] = useState(false);
 
-  const handleOnShowSuggestionBox = () => {
-    setShowSuggestionBox(s => !s);
+  const handleOnShowSuggestionBox = (test) => {
+    setShowSuggestionBox(test);
   };
 
-  const handleOnShowMaintenanceBox = () => {
-    setShowMaintenanceBox(s => !s);
+  const handleOnShowMaintenanceBox = (test) => {
+    setShowMaintenanceBox(test);
   };
+
 
   return (
     <Fragment>
@@ -34,13 +35,13 @@ export const FirstContact = () => {
         <Slicer box addSkeleton icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={showSuggestionBox ? <StyledAiOutlineCaretUp /> : <StyledAiOutlineCaretDown/>} />
       </ButtonStyled>
       {
-        showSuggestionBox ? <InformativeBox description={"Please! Leave you Suggestion"} type={'Suggestion'}/> : ''
+        showSuggestionBox ? <InformativeBox description={"Please! Leave you Suggestion"} type={'Suggestion'} handleOnShowSuggestionBox={handleOnShowSuggestionBox}/> : ''
       }
       <ButtonStyled onClick={handleOnShowMaintenanceBox}>
         <Slicer box addSkeleton icon={<StyledAiFillTool />} description={languageContext.language.maintSuggestionBox} action={showMaintenanceBox ? <StyledAiOutlineCaretUp /> : <StyledAiOutlineCaretDown/>} />
       </ButtonStyled>
       {
-        showMaintenanceBox ? <InformativeBox description={"Please! Leave your Maintenance Suggestion"} type={'Maintenance'}/> : ''
+        showMaintenanceBox ? <InformativeBox description={"Please! Leave your Maintenance Suggestion"} type={'Maintenance'} handleOnShowMaintenanceBox={handleOnShowMaintenanceBox}/> : ''
       }
       <Hr />
       <SlicerTitle addSkeleton title description={languageContext.language.survey} />
