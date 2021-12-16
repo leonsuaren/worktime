@@ -43,7 +43,11 @@ import {
   AiOutlineBgColors,
   AiOutlineCaretDown,
   AiOutlineCaretUp,
-  AiFillTool
+  AiFillTool,
+  AiOutlineExclamationCircle,
+  AiOutlineCloseCircle,
+  AiOutlineBulb,
+  AiOutlineCheckCircle
 } from 'react-icons/ai';
 
 
@@ -103,6 +107,30 @@ export const StyledAiOutlineMore = styled(AiOutlineMore)`
 export const StyledAiFillExperiment = styled(AiFillExperiment)`
   ${ThemeIconStyled};
   ${Disabled}
+`;
+
+export const StyledAiOutlineExclamationCircle = styled(AiOutlineExclamationCircle)`
+  ${ThemeIconStyled};
+  ${Disabled}
+  font-size: 40px;
+`;
+
+export const StyledAiOutlineCloseCircle = styled(AiOutlineCloseCircle)`
+  ${ThemeIconStyled};
+  ${Disabled}
+  font-size: 40px;
+`;
+
+export const StyledAiOutlineCheckCircle = styled(AiOutlineCheckCircle)`
+  ${ThemeIconStyled};
+  ${Disabled}
+  font-size: 40px;
+`;
+
+export const StyledAiOutlineBulb = styled(AiOutlineBulb)`
+  ${ThemeIconStyled};
+  ${Disabled}
+  font-size: 40px;
 `;
 
 export const StyledAiFillTool = styled(AiFillTool)`

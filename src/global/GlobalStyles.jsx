@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     color: #666666;
+    height: 100vh;
   }
 `;
 
@@ -18,5 +19,9 @@ export const Hr = styled.hr`
 export const globalStyles = {
   disabled: '#DDDDDD',
   darkSkeleton: '#AFAEAE',
-  ligthSkeleton: '#ccc9c9',
+  ligthSkeleton: '#CCC9C9',
+  alertSuccess: '#9FF4CC',
+  alertWarning: '#F7D367',
+  alertDanger: '#FC5F67',
+  alertInfo: '#57D8F2'
 }

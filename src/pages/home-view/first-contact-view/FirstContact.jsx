@@ -1,5 +1,9 @@
 import React, { Fragment, useContext, useState } from 'react';
+
 import { LanguageContext } from '../../../context';
+import { AlertContext } from '../../../context';
+
+import { Alert } from '../../../components/alert';
 import { SlicerTitle, Slicer } from '../../../components/slicer';
 import { InformativeBox } from '../../../components/informative-box';
 import { ButtonStyled } from './styled';
@@ -15,20 +19,28 @@ import {
 
 export const FirstContact = () => {
   const languageContext = useContext(LanguageContext);
+  const alertContext = useContext(AlertContext);
   const [showSuggestionBox, setShowSuggestionBox] = useState(false);
   const [ showMaintenanceBox, setShowMaintenanceBox ] = useState(false);
 
-  const handleOnShowSuggestionBox = (test) => {
-    setShowSuggestionBox(test);
+  const handleOnShowSuggestionBox = (suggestion) => {
+    setShowSuggestionBox(suggestion);
   };
 
-  const handleOnShowMaintenanceBox = (test) => {
-    setShowMaintenanceBox(test);
+  const handleOnShowMaintenanceBox = (suggestion) => {
+    setShowMaintenanceBox(suggestion);
   };
 
 
   return (
     <Fragment>
+      {
+        alertContext.showAlert ? <Alert 
+        description={"Thanks for your Suggestion"}  
+        showAlert={alertContext.showAlert}
+        type={"Danger"}
+        /> : ''
+      }
       <Hr />
       <SlicerTitle addSkeleton title description={languageContext.language.firstContact} />
       <ButtonStyled onClick={handleOnShowSuggestionBox}>
@@ -47,6 +59,7 @@ export const FirstContact = () => {
       <SlicerTitle addSkeleton title description={languageContext.language.survey} />
       <Slicer addSkeleton hoverOver icon={<StyledAiOutlineReconciliation />} description={"Uplift Cards"} action={<StyledAiFillCaretRight />} />
       <Slicer addSkeleton hoverOver icon={<StyledAiOutlineHdd />} description={"Chrismas Diner"} action={<StyledAiFillCaretRight />} />
+      <Hr />
     </Fragment>
   )
 };
