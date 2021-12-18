@@ -20,26 +20,27 @@ import {
 export const FirstContact = () => {
   const languageContext = useContext(LanguageContext);
   const alertContext = useContext(AlertContext);
-  const [showSuggestionBox, setShowSuggestionBox] = useState(false);
+  const [ showSuggestionBox, setShowSuggestionBox ] = useState(false);
   const [ showMaintenanceBox, setShowMaintenanceBox ] = useState(false);
+  const [ type, setType ] = useState('');
 
   const handleOnShowSuggestionBox = (suggestion) => {
     setShowSuggestionBox(suggestion);
+    setType('Suggestion');
   };
 
   const handleOnShowMaintenanceBox = (suggestion) => {
     setShowMaintenanceBox(suggestion);
+    setType('Maintenance');
   };
-
 
   return (
     <Fragment>
       {
-        alertContext.showAlert ? <Alert 
-        description={"Thanks for your Suggestion"}  
-        showAlert={alertContext.showAlert}
-        type={"Danger"}
-        /> : ''
+        alertContext.showAlert && <Alert 
+        description={type === 'Suggestion' ? "Thanks for your Suggestion" : "Thanks Maintenance will take care"}  
+        type={"Info"}
+        /> 
       }
       <Hr />
       <SlicerTitle addSkeleton title description={languageContext.language.firstContact} />
@@ -47,13 +48,13 @@ export const FirstContact = () => {
         <Slicer box addSkeleton icon={<StyledAiOutlineDiff />} description={languageContext.language.suggestionBox} action={showSuggestionBox ? <StyledAiOutlineCaretUp /> : <StyledAiOutlineCaretDown/>} />
       </ButtonStyled>
       {
-        showSuggestionBox ? <InformativeBox description={"Please! Leave you Suggestion"} type={'Suggestion'} handleOnShowSuggestionBox={handleOnShowSuggestionBox}/> : ''
+        showSuggestionBox ? <InformativeBox description={"Please! Leave you Suggestion"} type={type} handleOnShowSuggestionBox={handleOnShowSuggestionBox}/> : ''
       }
       <ButtonStyled onClick={handleOnShowMaintenanceBox}>
         <Slicer box addSkeleton icon={<StyledAiFillTool />} description={languageContext.language.maintSuggestionBox} action={showMaintenanceBox ? <StyledAiOutlineCaretUp /> : <StyledAiOutlineCaretDown/>} />
       </ButtonStyled>
       {
-        showMaintenanceBox ? <InformativeBox description={"Please! Leave your Maintenance Suggestion"} type={'Maintenance'} handleOnShowMaintenanceBox={handleOnShowMaintenanceBox}/> : ''
+        showMaintenanceBox ? <InformativeBox description={"Please! Leave your Maintenance Suggestion"} type={type} handleOnShowMaintenanceBox={handleOnShowMaintenanceBox}/> : ''
       }
       <Hr />
       <SlicerTitle addSkeleton title description={languageContext.language.survey} />

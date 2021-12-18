@@ -1,9 +1,7 @@
 import React from 'react';
 import { 
   ButtonStyled,
-  ButtonDescription,
-  ActionButtonStyled,
-  ButtonTextStyled
+  ButtonDescription
  } from './index';
 
 export const Button = ({ icon, description, ...props }) => {

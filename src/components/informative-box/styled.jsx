@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const InformativeBoxWrapper = styled.div`
   margin: 0;
   padding: 0px 10px 10px 10px;
+  display: block;
 `;
 
 export const InformativeContainer = styled.div`
@@ -14,7 +15,7 @@ export const InformativeContainer = styled.div`
   background: #FFFFFF;
   padding: 15px;
   border-top: none;
-  min-height: 220px;
+  height: 220px;
   border-left: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;

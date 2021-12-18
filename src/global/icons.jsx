@@ -110,26 +110,18 @@ export const StyledAiFillExperiment = styled(AiFillExperiment)`
 `;
 
 export const StyledAiOutlineExclamationCircle = styled(AiOutlineExclamationCircle)`
-  ${ThemeIconStyled};
-  ${Disabled}
   font-size: 40px;
 `;
 
 export const StyledAiOutlineCloseCircle = styled(AiOutlineCloseCircle)`
-  ${ThemeIconStyled};
-  ${Disabled}
   font-size: 40px;
 `;
 
 export const StyledAiOutlineCheckCircle = styled(AiOutlineCheckCircle)`
-  ${ThemeIconStyled};
-  ${Disabled}
   font-size: 40px;
 `;
 
 export const StyledAiOutlineBulb = styled(AiOutlineBulb)`
-  ${ThemeIconStyled};
-  ${Disabled}
   font-size: 40px;
 `;
 

@@ -5,25 +5,29 @@ const alertType = ({ type }) => {
   if (type === "Success") {
     return(
       css`
-       background-color: ${globalStyles.alertSuccess};
+       background-color: ${globalStyles.alert.alertSuccess};
+       color: ${globalStyles.alert.successFontColor};
       `
     )
   } else if (type === "Warning") {
     return(
       css`
-       background-color: ${globalStyles.alertWarning};
+       background-color: ${globalStyles.alert.alertWarning};
+       color: ${globalStyles.alert.warningFontColor};
       `
     )
   } else if (type === "Info") {
     return(
       css`
-       background-color: ${globalStyles.alertInfo};
+       background-color: ${globalStyles.alert.alertInfo};
+       color: ${globalStyles.alert.infoFontColor};
       `
     )
   } else if (type === "Danger") {
     return(
       css`
-       background-color: ${globalStyles.alertDanger};
+       background-color: ${globalStyles.alert.alertDanger};
+       color: ${globalStyles.alert.dangerFontColor};
       `
     )
   }
@@ -34,7 +38,7 @@ export const AlertWrapper = styled.div`
   display: block;
   justify-items: center;
   align-content: center;
-  min-height: 80px;
+  min-height: 70px;
   box-shadow: 0 0 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
   background: white;
   border-top-left-radius: 5px;
@@ -42,7 +46,18 @@ export const AlertWrapper = styled.div`
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: ${p => p.showAlert ? 0 : -80}px;
+  bottom: -70px;
+      animation-name: alert;
+      animation-duration: 4000ms;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+      @keyframes alert {
+        0% {bottom: -70px}
+        25% {bottom: 0px}
+        50% {bottom: 0px}
+        100% {bottom: -70px}
+      }
+  transition: bottom 2s ease-in-out;
   width: 90%;
   background: ${ globalStyles.alertWarning };
   padding: 15px 10px;
@@ -52,7 +67,7 @@ export const AlertWrapper = styled.div`
 
 export const AlertBody = styled.div`
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: grid;
   justify-items: center;
   align-content: center;

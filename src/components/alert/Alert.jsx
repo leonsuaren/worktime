@@ -1,9 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
+
+import { AlertContext } from '../../context';
 
 import { AlertWrapper, AlertBody, AlertIcon, AlertContent } from './styled';
 import { StyledAiOutlineExclamationCircle, StyledAiOutlineCloseCircle, StyledAiOutlineBulb, StyledAiOutlineCheckCircle } from '../../global';
 
-export const Alert = ({ icon, description, showAlert, type }) => {
+export const Alert = ({ icon, description, type }) => {
+  const alertContext = useContext(AlertContext);
 
   if (type === "Success") {
     icon = <StyledAiOutlineCheckCircle />
@@ -15,9 +18,13 @@ export const Alert = ({ icon, description, showAlert, type }) => {
     icon = <StyledAiOutlineCloseCircle />;
   }
 
+  useEffect(() => {
+    alertContext.onHideAlert();
+  });
+
   return(
     <Fragment>
-      <AlertWrapper showAlert={showAlert} type={type}>
+      <AlertWrapper showAlert={alertContext.showAlert} type={type}>
         <AlertBody>
           <AlertIcon>{ icon }</AlertIcon>
           <AlertContent>{ description }</AlertContent>

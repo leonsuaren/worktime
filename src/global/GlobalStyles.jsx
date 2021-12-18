@@ -20,8 +20,14 @@ export const globalStyles = {
   disabled: '#DDDDDD',
   darkSkeleton: '#AFAEAE',
   ligthSkeleton: '#CCC9C9',
-  alertSuccess: '#9FF4CC',
-  alertWarning: '#F7D367',
-  alertDanger: '#FC5F67',
-  alertInfo: '#57D8F2'
+  alert: {
+    alertSuccess: '#c5f7de',
+    successFontColor: '#13f282',
+    alertWarning: '#f7e3b2',
+    warningFontColor: '#f4b516',
+    alertDanger: '#f7aaae',
+    dangerFontColor: '#f70e1a',
+    alertInfo: '#a4e8f4',
+    infoFontColor: '#0cd4f7'
+  }
 }

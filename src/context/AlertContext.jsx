@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import { Alert } from '../components/alert';
 
 export const AlertContext = createContext();
 
@@ -7,11 +6,17 @@ export const AlertContextProvider = ({ children }) => {
   const [ showAlert, setShowAlert ] = useState(false);
 
   const onShowAlert = () => {
-    setShowAlert(true)
+    setShowAlert(true);
+  };
+  
+  const onHideAlert = () => {
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 4000)
   };
 
   return(
-    <AlertContext.Provider value={{ onShowAlert, showAlert }}>
+    <AlertContext.Provider value={{ onShowAlert, onHideAlert, showAlert }}>
       { children }
     </AlertContext.Provider>
   )

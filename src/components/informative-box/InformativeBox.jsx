@@ -23,12 +23,13 @@ export const InformativeBox = ({ description, type, handleOnShowSuggestionBox, h
   const handleOnSaveSuggestion = () => {
     localStorage.setItem('Suggestion', JSON.stringify(suggestion));
     handleOnShowSuggestionBox(false);
-    alertContext.onShowAlert(true)
+    alertContext.onShowAlert()
   };
 
   const handleOnSaveMaintenanceSuggestion = () => {
     localStorage.setItem('Maintenance', JSON.stringify(maintenance));
     handleOnShowMaintenanceBox(false);
+    alertContext.onShowAlert()
   };
 
   const handleOnCancelSuggestion = () => {
@@ -39,7 +40,6 @@ export const InformativeBox = ({ description, type, handleOnShowSuggestionBox, h
     handleOnShowMaintenanceBox(false);
   };
   //disabled={addSuggestion && addMaintenanceSuggestion === '' ? true : false}
-
   return (
     <InformativeBoxWrapper>
       <InformativeContainer>
