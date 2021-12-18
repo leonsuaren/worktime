@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import { AlertContext } from '../../context';
+
 import { InformativeBoxWrapper, InformativeContainer, ButtonContainer, Description , TextArea} from './styled';
 import { ActionButton } from '../../components/button/action-button';
 
 export const InformativeBox = ({ description, type, handleOnShowSuggestionBox, handleOnShowMaintenanceBox }) => {
+  const alertContext = useContext(AlertContext);
   const [ addSuggestion, setAddSuggestion ] = useState('');
   const [ addMaintenanceSuggestion, setAddMaintenanceSuggestion ] = useState('');
   let suggestion = {user: 'Leon Suarez', description: addSuggestion, type: type}
@@ -19,11 +23,13 @@ export const InformativeBox = ({ description, type, handleOnShowSuggestionBox, h
   const handleOnSaveSuggestion = () => {
     localStorage.setItem('Suggestion', JSON.stringify(suggestion));
     handleOnShowSuggestionBox(false);
+    alertContext.onShowAlert()
   };
 
   const handleOnSaveMaintenanceSuggestion = () => {
     localStorage.setItem('Maintenance', JSON.stringify(maintenance));
     handleOnShowMaintenanceBox(false);
+    alertContext.onShowAlert()
   };
 
   const handleOnCancelSuggestion = () => {
@@ -34,7 +40,6 @@ export const InformativeBox = ({ description, type, handleOnShowSuggestionBox, h
     handleOnShowMaintenanceBox(false);
   };
   //disabled={addSuggestion && addMaintenanceSuggestion === '' ? true : false}
-
   return (
     <InformativeBoxWrapper>
       <InformativeContainer>

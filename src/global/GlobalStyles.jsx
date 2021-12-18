@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     color: #666666;
+    height: 100vh;
   }
 `;
 
@@ -18,5 +19,15 @@ export const Hr = styled.hr`
 export const globalStyles = {
   disabled: '#DDDDDD',
   darkSkeleton: '#AFAEAE',
-  ligthSkeleton: '#ccc9c9',
+  ligthSkeleton: '#CCC9C9',
+  alert: {
+    alertSuccess: '#c5f7de',
+    successFontColor: '#13f282',
+    alertWarning: '#f7e3b2',
+    warningFontColor: '#f4b516',
+    alertDanger: '#f7aaae',
+    dangerFontColor: '#f70e1a',
+    alertInfo: '#a4e8f4',
+    infoFontColor: '#0cd4f7'
+  }
 }
