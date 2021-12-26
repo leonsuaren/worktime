@@ -16,7 +16,8 @@ import {
   StyledAiOutlineUser,
   StyledAiOutlineHeart,
   StyledAiOutlineRead,
-  StyledAiOutlineSafety
+  StyledAiOutlineSafety,
+  StyledAiOutlineMail
 } from '../../global';
 import { LinkTo } from './styled';
 
@@ -63,6 +64,9 @@ export const More = () => {
             </LinkTo>
             <LinkTo to='' disabled={disabled} >
               <Slicer disabled={disabled} addSkeleton hoverOver  icon={<StyledAiOutlineVideoCamera disabled={disabled}/>} description={"Manage Channels"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
+            </LinkTo>
+            <LinkTo to='' disabled={disabled} >
+              <Slicer disabled={disabled} addSkeleton hoverOver  icon={<StyledAiOutlineMail disabled={disabled}/>} description={"Read Suggestions"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
             <Hr />
           </div>

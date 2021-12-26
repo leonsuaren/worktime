@@ -51,6 +51,9 @@ export const PageLayout = ({ children }) => {
     headerLayout = false;
   } else if (pathname === '/login') {
     activePage = '';
+  } else if (pathname === '/more/suggestions') {
+    activePage = 'SUGGESTIONS';
+    headerLayout = false;
   }
 
   return (

@@ -8,6 +8,7 @@ import { ActionButton } from '../../components/button/action-button';
 export const InformativeBox = ({ description, type, handleOnShowSuggestionBox, handleOnShowMaintenanceBox }) => {
   const alertContext = useContext(AlertContext);
   const [ addSuggestion, setAddSuggestion ] = useState('');
+  let fullSuggestion = [];
   const [ addMaintenanceSuggestion, setAddMaintenanceSuggestion ] = useState('');
   let suggestion = {user: 'Leon Suarez', description: addSuggestion, type: type}
   let maintenance = {user: 'Leon Suarez', description: addMaintenanceSuggestion, type: type}
@@ -15,13 +16,15 @@ export const InformativeBox = ({ description, type, handleOnShowSuggestionBox, h
   const handleOnAddSuggestion = (event) => {
     setAddSuggestion(event.target.value);
   };
+
   
   const hadleOnAddMaintenanceSuggestion = (event) => {
     setAddMaintenanceSuggestion(event.target.value);
   };
 
   const handleOnSaveSuggestion = () => {
-    localStorage.setItem('Suggestion', JSON.stringify(suggestion));
+    fullSuggestion.push(suggestion);
+    localStorage.setItem('Suggestion', JSON.stringify(fullSuggestion));
     handleOnShowSuggestionBox(false);
     alertContext.onShowAlert()
   };

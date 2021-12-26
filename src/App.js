@@ -6,6 +6,7 @@ import { AlertContextProvider } from './context';
 import { UserContextProvider } from './context/UserContext';
 import { AddNotificationContextProvider } from './context/AddNotificationContext';
 import { LanguageContextProvider } from './context/LanguageContext';
+import { DataBaseContextProvider } from './context';
 
 import { PageLayout } from './global';
 import { GlobalStyle } from './global/GlobalStyles';
@@ -22,6 +23,8 @@ import { FirstContact } from './pages/home-view/first-contact-view';
 import { ChangeLanguage } from './pages/settings-view/change-language';
 import { NotFound } from './pages/not-found';
 import { Loading } from './pages/loading';
+import { Suggestions } from './pages/more-view/suggestions';
+import { Channel } from './pages/channels-view/channel';
 
 
 function App() {
@@ -29,29 +32,33 @@ function App() {
     <Fragment>
       <AlertContextProvider>
         <UserContextProvider>
-          <Theme theme>
-            <Router>
-              <GlobalStyle />
-              <LanguageContextProvider>
-                <PageLayout>
-                  <AddNotificationContextProvider>
-                    <Routes>
-                      <Route exact path='/' element={<Home />} />
-                      <Route path='schedule' element={<Schedule />} />
-                      <Route path='channels' element={<Channels />} />
-                      <Route path='notifications' element={<Notifications />} />
-                      <Route path='more' element={<More />} />
-                      <Route path='settings' element={<Settings />} />
-                      <Route path='settings/change-language' element={<ChangeLanguage />} />
-                      <Route path='settings/add-notifications' element={<AddNotifications />} />
-                      <Route path='first-contact' element={<FirstContact />} />
-                      <Route path='*' element={<NotFound />} />
-                    </Routes>
-                  </AddNotificationContextProvider>
-                </PageLayout>
-              </LanguageContextProvider>
-            </Router>
-          </Theme>
+          <DataBaseContextProvider>
+            <Theme theme>
+              <Router>
+                <GlobalStyle />
+                <LanguageContextProvider>
+                  <PageLayout>
+                    <AddNotificationContextProvider>
+                      <Routes>
+                        <Route exact path='/' element={<Home />} />
+                        <Route path='schedule' element={<Schedule />} />
+                        <Route path='channels' element={<Channels />} />
+                        <Route path='channels/channel' element={<Channel />} />
+                        <Route path='notifications' element={<Notifications />} />
+                        <Route path='more' element={<More />} />
+                        <Route path='more/suggestions' element={<Suggestions />} />
+                        <Route path='settings' element={<Settings />} />
+                        <Route path='settings/change-language' element={<ChangeLanguage />} />
+                        <Route path='settings/add-notifications' element={<AddNotifications />} />
+                        <Route path='first-contact' element={<FirstContact />} />
+                        <Route path='*' element={<NotFound />} />
+                      </Routes>
+                    </AddNotificationContextProvider>
+                  </PageLayout>
+                </LanguageContextProvider>
+              </Router>
+            </Theme>
+          </DataBaseContextProvider>
         </UserContextProvider>
       </AlertContextProvider>
     </Fragment>
