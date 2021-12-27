@@ -43,7 +43,7 @@ function App() {
                         <Route exact path='/' element={<Home />} />
                         <Route path='schedule' element={<Schedule />} />
                         <Route path='channels' element={<Channels />} />
-                        <Route path='channels/channel' element={<Channel />} />
+                        <Route path='channels/channel/:id' element={<Channel />} />
                         <Route path='notifications' element={<Notifications />} />
                         <Route path='more' element={<More />} />
                         <Route path='more/suggestions' element={<Suggestions />} />

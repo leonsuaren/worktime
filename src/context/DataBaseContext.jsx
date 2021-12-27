@@ -5,15 +5,15 @@ export const DataBaseContext = createContext();
 export const DataBaseContextProvider = ({ children }) => {
 
 const [ oneChannel, setOneChannel ] = useState();
+const [ channelId, setChannelId ] = useState();
 
-const fetchOneChannel = ({channelId}) => {
-  axios.get(`http://localhost:8000/channels/:${channelId}`).then((response) => {
-      setOneChannel(response.data);
-  });
+const fetchOneChannel = ({oneChannel, _id}) => {
+  setOneChannel(oneChannel)
+  setChannelId(_id)
 };
 
   return(
-    <DataBaseContext.Provider value={ { oneChannel, fetchOneChannel } }>
+    <DataBaseContext.Provider value={ { oneChannel, channelId, fetchOneChannel } }>
       { children }
     </DataBaseContext.Provider>
   );
