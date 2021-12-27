@@ -47,7 +47,8 @@ import {
   AiOutlineExclamationCircle,
   AiOutlineCloseCircle,
   AiOutlineBulb,
-  AiOutlineCheckCircle
+  AiOutlineCheckCircle,
+  AiOutlineMail
 } from 'react-icons/ai';
 
 
@@ -131,6 +132,11 @@ export const StyledAiFillTool = styled(AiFillTool)`
 `;
 
 export const StyledAiOutlineBgColors = styled(AiOutlineBgColors)`
+  ${ThemeIconStyled};
+  ${Disabled}
+`;
+
+export const StyledAiOutlineMail = styled(AiOutlineMail)`
   ${ThemeIconStyled};
   ${Disabled}
 `;

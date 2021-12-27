@@ -30,6 +30,8 @@ export const Navbar = () => {
     showNavigationBar = true
   } else if (pathname === "/login") {
     showNavigationBar = true
+  } else if (pathname === "/more/suggestions") {
+    showNavigationBar = true
   }
 
   return (
