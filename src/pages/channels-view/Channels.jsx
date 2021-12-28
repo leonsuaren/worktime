@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { LanguageContext, DataBaseContext } from '../../context';
@@ -37,7 +37,6 @@ export const Channels = () => {
   const navigate = useNavigate();
 
   const [channels, setChannels] = useState([]);
-  const [oneChannel, setOneChannel] = useState();
 
   useEffect(() => {
     axios.get('http://localhost:8000/channels').then((response) => {
@@ -49,7 +48,6 @@ export const Channels = () => {
      const oneChannel = await  axios.get(`http://localhost:8000/channels/channel/${_id}`).then((response) => {
           return response.data
         });
-        setOneChannel(oneChannel);
         dataBaseContext.fetchOneChannel({oneChannel, _id});
         navigate(`/channels/channel/${_id}`)
       };
