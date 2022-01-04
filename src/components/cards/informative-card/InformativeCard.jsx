@@ -17,7 +17,7 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
   console.log(type)
   return (
     <Fragment>
-      <StyledInformativeCard type>
+      <StyledInformativeCard type={type}>
         <Header>
           <Title>{channelTitle}</Title>
           <LinkTo to="/">
@@ -42,7 +42,7 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
             </BodyTitle>
           </BodyHeader>
           <BobyContent>
-            <BodyDescription>{description.slice(0, 100)}...</BodyDescription>
+            <BodyDescription>{type === "informative" ? description.slice(0, 100) : description.slice(0, 300)}...</BodyDescription>
             {
               type === 'informative' ? <BodyImage src={img} /> : ""
             }    
