@@ -6,7 +6,7 @@ export const StyledInformativeCard = styled.div`
   grid-template-rows: ${p => p.type === 'informative' ? '10% 80% 10% ': '10% 90%' } ;
   justify-items: center;
   align-content: center;
-  min-height: 300px;
+  min-height: 250px;
   box-shadow: 0 0 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
   border: ${p => p.theme.borderColor};
   border-radius: 5px;
