@@ -48,7 +48,8 @@ import {
   AiOutlineCloseCircle,
   AiOutlineBulb,
   AiOutlineCheckCircle,
-  AiOutlineMail
+  AiOutlineMail,
+  AiOutlineLike
 } from 'react-icons/ai';
 
 
@@ -83,6 +84,11 @@ const ThemeIconStyled = () => {
 
 export const StyledFillSetting = styled(AiFillSetting)`
   ${IconStyled};
+`;
+
+export const StyledAiOutlineLike = styled(AiOutlineLike)`
+  ${IconStyled};
+  color: #CCCCCC;
 `;
 
 export const StyledBihome = styled(AiOutlineHome)`
