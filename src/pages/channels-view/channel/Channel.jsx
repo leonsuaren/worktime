@@ -9,7 +9,6 @@ export const Channel = () => {
   const dataBaseContext = useContext(DataBaseContext);
   const channel = dataBaseContext.oneChannel;
   const cards = dataBaseContext.oneChannel.cards;
-  console.log(cards);
 
   return (
     <Fragment>
@@ -18,6 +17,7 @@ export const Channel = () => {
           cards.map((card, key) => {
           return (
             <InformativeCard
+              type={card.type}
               channelTitle={channel.channel_title}
               logo={channel.logo}
               key={key}

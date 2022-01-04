@@ -3,7 +3,7 @@ import { Link as ReactRouterDomLink } from 'react-router-dom';
 
 export const StyledInformativeCard = styled.div`
   display: grid;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: ${p => p.type ? '10% 80% 10% ': '10% 90%' } ;
   justify-items: center;
   align-content: center;
   min-height: 300px;
@@ -124,7 +124,7 @@ export const BodyImage = styled.img`
   margin-bottom: 10px;
 `;
 
-export const BodySubtitle = styled.p`
+export const BodySubtitle = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   margin: 0;

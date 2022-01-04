@@ -6,7 +6,7 @@ import { DataBaseContext } from '../../../context';
 import { StyledInformativeCard, Header, Title, Footer, LikeButton, LikeIncrement, LinkTo, Body, Avatar, BodyHeader, BodyTitle, TitleHead, BodyImage, BobyContent, BodySubtitle, DateHead, SubtitleHead, BodyDescription } from './styled';
 import { StyledAiFillCaretRight, StyledAiOutlineLike } from '../../../global';
 
-export const InformativeCard = ({ channelTitle, logo, title, subtitle, description, img, date }) => {
+export const InformativeCard = ({ channelTitle, logo, title, subtitle, description, img, date, type }) => {
   const dataBaseContext = useContext(DataBaseContext);
   const [increment, setIncrement] = useState(dataBaseContext.oneChannel.cards[0].likes);
 
@@ -14,9 +14,10 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
     setIncrement(s => s + 1);
   }
 
+  console.log(type)
   return (
     <Fragment>
-      <StyledInformativeCard>
+      <StyledInformativeCard type>
         <Header>
           <Title>{channelTitle}</Title>
           <LinkTo to="/">
@@ -42,15 +43,21 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
           </BodyHeader>
           <BobyContent>
             <BodyDescription>{description.slice(0, 100)}...</BodyDescription>
-            <BodyImage src={img} />
+            {
+              type === 'informative' ? <BodyImage src={img} /> : ""
+            }    
           </BobyContent>
         </Body>
-        <Footer>
-          <LikeButton onClick={onIncremtnt}>
-            <StyledAiOutlineLike />
-            <LikeIncrement>{increment}</LikeIncrement>
-          </LikeButton>
-        </Footer>
+        {
+          type === 'informative' ?
+            <Footer>
+              <LikeButton onClick={onIncremtnt}>
+                <StyledAiOutlineLike />
+                <LikeIncrement>{increment}</LikeIncrement>
+              </LikeButton>
+            </Footer>
+            : ''
+        }
       </StyledInformativeCard>
     </Fragment >
   )

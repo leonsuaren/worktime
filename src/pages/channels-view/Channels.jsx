@@ -10,15 +10,7 @@ import {
   Hr,
   StyledAiFillCaretRight,
   StyledAiOutlineTeam,
-  StyledAiOutlineBug,
   StyledAiOutlineAudio,
-  StyledAiOutlineSafetyCertificate,
-  StyledAiOutlineSelect,
-  StyledAiOutlineSound,
-  StyledAiOutlineLink,
-  StyledAiOutlineApartment,
-  StyledAiOutlineExclamation,
-  StyledAiOutlineSearch,
   StyledAiOutlineCrown,
   StyledAiOutlineBook,
   StyledAiOutlineSafety,
@@ -65,17 +57,6 @@ export const Channels = () => {
           )
         })
       }
-      <Hr />
-      <SlicerTitle addSkeleton title description={languageContext.language.humanResources} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineTeam />} description={languageContext.language.diversityAndInclusion} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineBug />} description={languageContext.language.COVID19Comunications} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineSearch />} description={languageContext.language.FocusOnWellness} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineSafetyCertificate />} description={languageContext.language.StayingSafeAtHome} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineSelect />} description={languageContext.language.FeedYourSpirit} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineSound />} description={languageContext.language.NewsToKnow} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineLink />} description={languageContext.language.TheScoop} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineApartment />} description={languageContext.language.CarrierCorner} action={<StyledAiFillCaretRight />} />
-      <Slicer hoverOver addSkeleton icon={<StyledAiOutlineExclamation />} description={languageContext.language.FAQs} action={<StyledAiFillCaretRight />} />
       <Hr />
       <SlicerTitle addSkeleton title description={languageContext.language.Warehouse} />
       <Slicer hoverOver addSkeleton icon={<StyledAiOutlineAudio />} description={languageContext.language.Announcements} action={<StyledAiFillCaretRight />} />
