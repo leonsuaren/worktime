@@ -33,7 +33,7 @@ export const Footer = styled.div`
   display: flex;
   padding: 5px;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   border-top: ${p => p.theme.borderColor};
 `;
@@ -60,8 +60,11 @@ export const LinkTo = styled(Link)`
 
 export const LikeIncrement = styled.span`
   margin: 2px;
-  font-size: 1.1rem;
+  font-size: .9rem;
   color: #CCCCCC;
+  position: relative;
+    top: -14px;
+    right: 5px;
 `;
 
 export const Body = styled.div`

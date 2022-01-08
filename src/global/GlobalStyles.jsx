@@ -16,6 +16,17 @@ export const Hr = styled.hr`
   margin: 20px auto;
 `;
 
+// export const NotifyNumber = styled.div`
+//   width: 20px;
+//   height: 15px;
+//   border-radius: 5px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   background-color: ${p => p.theme.iconColor};
+// `
+
 export const globalStyles = {
   disabled: '#DDDDDD',
   darkSkeleton: '#AFAEAE',

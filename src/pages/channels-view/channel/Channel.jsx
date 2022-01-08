@@ -17,15 +17,19 @@ export const Channel = () => {
           cards.map((card, key) => {
           return (
             <InformativeCard
-              type={card.type}
-              channelTitle={channel.channel_title}
-              logo={channel.logo}
-              key={key}
-              title={card.title}
-              subtitle={card.subtitle}
-              description={card.description}
-              img={card.img}
-              date={card.date}
+            _id={channel._id}
+            _idCard={card._idCard}
+            type={card.type}
+            channelTitle={channel.channel_title}
+            logo={channel.logo}
+            key={key}
+            title={card.title}
+            subtitle={card.subtitle}
+            description={card.description}
+            img={card.img}
+            date={card.date}
+            likes={card.likes}
+            unlikes={card.unlikes}
             >
             </InformativeCard>
           )

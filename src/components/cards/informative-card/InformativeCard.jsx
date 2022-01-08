@@ -1,20 +1,33 @@
-import React, { Fragment, useContext, useState } from 'react';
-// import { Link } from 'react-router-dom';
-
-import { DataBaseContext } from '../../../context';
+import React, { Fragment, useState, useEffect } from 'react';
+import axios from 'axios';
 
 import { StyledInformativeCard, Header, Title, Footer, LikeButton, LikeIncrement, LinkTo, Body, Avatar, BodyHeader, BodyTitle, TitleHead, BodyImage, BobyContent, BodySubtitle, DateHead, SubtitleHead, BodyDescription } from './styled';
-import { StyledAiFillCaretRight, StyledAiOutlineLike } from '../../../global';
+import { StyledAiFillCaretRight, StyledAiOutlineLike, StyledAiOutlineDislike } from '../../../global';
 
-export const InformativeCard = ({ channelTitle, logo, title, subtitle, description, img, date, type }) => {
-  const dataBaseContext = useContext(DataBaseContext);
-  const [increment, setIncrement] = useState(dataBaseContext.oneChannel.cards[0].likes);
+export const InformativeCard = ({ channelTitle, logo, title, subtitle, description, img, date, type, likes, unlikes, _id, _idCard }) => {
+  const [incLikes, setIncLikes] = useState(likes);
+  const [decLikes, setDecLikes] = useState(unlikes);
 
-  const onIncremtnt = () => {
-    setIncrement(s => s + 1);
+  useEffect(() => {
+    const fetchLikes = (_id, _idCard) => {
+      axios.post(`http://localhost:8000/channels/channel/likes/${_id}/${_idCard}?likes=${incLikes}`)
+    }
+    fetchLikes(_id, _idCard);
+  }, [incLikes]);
+
+  useEffect(() => {
+      axios.post(`http://localhost:8000/channels/channel/unlikes/${_id}/${_idCard}?unlikes=${decLikes}`)
+  }, [decLikes]);
+
+  const onLike = async () => {
+    setIncLikes(s => s + 1);
   }
 
-  console.log(type)
+  const onUnLike = () => {
+    setDecLikes(s => s + 1);
+  }
+
+
   return (
     <Fragment>
       <StyledInformativeCard type={type}>
@@ -45,15 +58,19 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
             <BodyDescription>{type === "informative" ? description.slice(0, 100) : description.slice(0, 300)}...</BodyDescription>
             {
               type === 'informative' ? <BodyImage src={img} /> : ""
-            }    
+            }
           </BobyContent>
         </Body>
         {
           type === 'informative' ?
             <Footer>
-              <LikeButton onClick={onIncremtnt}>
+              <LikeButton onClick={onLike}>
                 <StyledAiOutlineLike />
-                <LikeIncrement>{increment}</LikeIncrement>
+                <LikeIncrement>{incLikes}</LikeIncrement>
+              </LikeButton>
+              <LikeButton onClick={onUnLike}>
+                <StyledAiOutlineDislike />
+                  <LikeIncrement>{decLikes}</LikeIncrement>
               </LikeButton>
             </Footer>
             : ''
