@@ -47,7 +47,6 @@ export const Channels = () => {
   return (
     <Fragment>
       <Hr />
-      <SlicerTitle addSkeleton title description={languageContext.language.humanResources} />
       {
         channels.map((channel, key) => {
           return (
@@ -58,7 +57,6 @@ export const Channels = () => {
         })
       }
       <Hr />
-      <SlicerTitle addSkeleton title description={languageContext.language.Warehouse} />
       <Slicer hoverOver addSkeleton icon={<StyledAiOutlineAudio />} description={languageContext.language.Announcements} action={<StyledAiFillCaretRight />} />
       <Slicer hoverOver addSkeleton icon={<StyledAiOutlineCrown />} description={languageContext.language.Celebrations} action={<StyledAiFillCaretRight />} />
       <Slicer hoverOver addSkeleton icon={<StyledAiOutlineBook />} description={languageContext.language.AssociateResorce} action={<StyledAiFillCaretRight />} />
