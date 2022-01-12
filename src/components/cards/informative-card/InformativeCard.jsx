@@ -5,20 +5,18 @@ import { StyledInformativeCard, Header, Title, Footer, LikeButton, LikeIncrement
 import { StyledAiFillCaretRight, StyledAiOutlineLike, StyledAiOutlineDislike } from '../../../global';
 
 export const InformativeCard = ({ channelTitle, logo, title, subtitle, description, img, date, type, likes, unlikes, _id, _idCard, ...props }) => {
-  var [incLikes, setIncLikes] = useState(likes);
-  var [decLikes, setDecLikes] = useState(unlikes);
-
-  console.log({infirmative: likes})
-
+  const [incLikes, setIncLikes] = useState(likes);
+  const [decLikes, setDecLikes] = useState(unlikes);
+  
   useEffect(() => {
       axios.post(`http://localhost:8000/channels/channel/likes/${_id}/${_idCard}?likes=${incLikes}`)
-  }, [incLikes]);
+  }, []);
 
   useEffect(() => {
       axios.post(`http://localhost:8000/channels/channel/unlikes/${_id}/${_idCard}?unlikes=${decLikes}`)
   }, [decLikes]);
 
-  const onLike = async () => {
+  const onLike = () => {
     setIncLikes(s => s + 1);
   }
 
@@ -64,7 +62,7 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
             <Footer>
               <LikeButton onClick={onLike}>
                 <StyledAiOutlineLike />
-                <LikeIncrement>{incLikes}</LikeIncrement>
+                <LikeIncrement>{likes}</LikeIncrement>
               </LikeButton>
               <LikeButton onClick={onUnLike}>
                 <StyledAiOutlineDislike />

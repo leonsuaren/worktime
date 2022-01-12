@@ -5,8 +5,6 @@ export const DataBaseContext = createContext();
 export const DataBaseContextProvider = ({ children }) => {
 
 const [ oneChannel, setOneChannel ] = useState();
-const [ channelId, setChannelId ] = useState();
-
 const [channels, setChannels] = useState([]);
 
 useEffect(() => {
@@ -15,13 +13,12 @@ useEffect(() => {
   });
 }, []);
 
-const fetchOneChannel = ({oneChannel, _id}) => {
+const fetchOneChannel = ({oneChannel}) => {
   setOneChannel(oneChannel);
-  setChannelId(_id);
 };
-
+console.log(oneChannel)
   return(
-    <DataBaseContext.Provider value={ { channels, oneChannel, channelId, fetchOneChannel } }>
+    <DataBaseContext.Provider value={ { channels, oneChannel, fetchOneChannel } }>
       { children }
     </DataBaseContext.Provider>
   );

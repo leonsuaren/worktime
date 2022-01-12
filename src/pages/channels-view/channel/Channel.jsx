@@ -15,7 +15,7 @@ export const Channel = () => {
       <Hr />
       {
         cards.map((card, key) => {
-          console.log(card.likes)
+          console.log({"channel": card.likes})
           return (
             <InformativeCard
               _id={channel._id}

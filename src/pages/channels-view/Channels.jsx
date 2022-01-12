@@ -41,7 +41,7 @@ export const Channels = () => {
      const oneChannel = await  axios.get(`http://localhost:8000/channels/channel/${_id}`).then((response) => {
           return response.data
         });
-        dataBaseContext.fetchOneChannel({oneChannel, _id, channels});
+        dataBaseContext.fetchOneChannel({oneChannel, _id});
         navigate(`/channels/channel/${_id}`)
       };
       
