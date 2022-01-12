@@ -13,28 +13,29 @@ export const Channel = () => {
   return (
     <Fragment>
       <Hr />
-        {
-          cards.map((card, key) => {
+      {
+        cards.map((card, key) => {
+          console.log({"channel": card.likes})
           return (
             <InformativeCard
-            _id={channel._id}
-            _idCard={card._idCard}
-            type={card.type}
-            channelTitle={channel.channel_title}
-            logo={channel.logo}
-            key={key}
-            title={card.title}
-            subtitle={card.subtitle}
-            description={card.description}
-            img={card.img}
-            date={card.date}
-            likes={card.likes}
-            unlikes={card.unlikes}
+              _id={channel._id}
+              _idCard={card._idCard}
+              type={card.type}
+              channelTitle={channel.channel_title}
+              logo={channel.logo}
+              key={key}
+              title={card.title}
+              subtitle={card.subtitle}
+              description={card.description}
+              img={card.img}
+              date={card.date}
+              likes={card.likes}
+              unlikes={card.unlikes}
             >
             </InformativeCard>
           )
         })
-        }
+      }
       <Hr />
     </Fragment>
   )

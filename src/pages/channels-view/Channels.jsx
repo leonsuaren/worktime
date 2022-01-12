@@ -26,15 +26,16 @@ import {
 export const Channels = () => {
   const languageContext = useContext(LanguageContext);
   const dataBaseContext = useContext(DataBaseContext);
+  const channels = dataBaseContext.channels
   const navigate = useNavigate();
 
-  const [channels, setChannels] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:8000/channels').then((response) => {
-      setChannels(response.data.channels);
-    });
-  }, []);
+  // const [channels, setChannels] = useState([]);
+    
+  // useEffect(() => {
+  //   axios.get('http://localhost:8000/channels').then((response) => {
+  //     setChannels(response.data.channels);
+  //   });
+  // }, []);
 
   const handleOnFetchOnChannel = async (_id) => {
      const oneChannel = await  axios.get(`http://localhost:8000/channels/channel/${_id}`).then((response) => {
