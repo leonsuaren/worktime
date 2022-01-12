@@ -4,15 +4,14 @@ import axios from 'axios';
 import { StyledInformativeCard, Header, Title, Footer, LikeButton, LikeIncrement, LinkTo, Body, Avatar, BodyHeader, BodyTitle, TitleHead, BodyImage, BobyContent, BodySubtitle, DateHead, SubtitleHead, BodyDescription } from './styled';
 import { StyledAiFillCaretRight, StyledAiOutlineLike, StyledAiOutlineDislike } from '../../../global';
 
-export const InformativeCard = ({ channelTitle, logo, title, subtitle, description, img, date, type, likes, unlikes, _id, _idCard }) => {
-  const [incLikes, setIncLikes] = useState(likes);
-  const [decLikes, setDecLikes] = useState(unlikes);
+export const InformativeCard = ({ channelTitle, logo, title, subtitle, description, img, date, type, likes, unlikes, _id, _idCard, ...props }) => {
+  var [incLikes, setIncLikes] = useState(likes);
+  var [decLikes, setDecLikes] = useState(unlikes);
+
+  console.log({infirmative: likes})
 
   useEffect(() => {
-    const fetchLikes = (_id, _idCard) => {
       axios.post(`http://localhost:8000/channels/channel/likes/${_id}/${_idCard}?likes=${incLikes}`)
-    }
-    fetchLikes(_id, _idCard);
   }, [incLikes]);
 
   useEffect(() => {
@@ -26,7 +25,6 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
   const onUnLike = () => {
     setDecLikes(s => s + 1);
   }
-
 
   return (
     <Fragment>
