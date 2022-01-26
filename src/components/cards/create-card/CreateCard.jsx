@@ -1,15 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { StyledCreateCard, Title, SelectChannel, Label, Span, Select, SelectDepartment, SelectImage, Input, CreateContent } from './styled';
 
 export const CreateCard = () => {
-  const ref = useRef();
-  console.log(ref.current);
+  const { register, handleSubmit } = useForm();
+  const [ cardInformation, setCardInformation ] = useState("");
+
   return (
-    <StyledCreateCard>
+    <StyledCreateCard onSubmit={handleSubmit((data) => setCardInformation(data))}>
       <Title>Create a Card</Title>
       <SelectDepartment>
-        <Label for="deparment"><Span>Department:</Span></Label>
-        <Select name="deparment" ref={ref}>
+        <Label for="department"><Span>Department:</Span></Label>
+        <Select {...register("department")} name="department">
           <option value='human-resuorces' >Human Resources</option>
           <option value='warehouse' >Warehouse</option>
           <option value='freezer' >Freezer</option>
@@ -18,7 +20,7 @@ export const CreateCard = () => {
       </SelectDepartment>
       <SelectChannel>
         <Label for="channel"><Span>Channel:</Span></Label>
-        <Select name="channel">
+        <Select {...register("channel")} name="channel">
           <option value="diversity">Diversity and Inclusion</option>
           <option value="covid">COVIT-19 Comunications</option>
           <option value="focus">Focus on Wellness</option>
@@ -32,25 +34,26 @@ export const CreateCard = () => {
       </SelectChannel>
       <SelectChannel>
         <Label for="type"><Span>Card Type:</Span></Label>
-        <Select name="type" defaultValue="announcements">
+        <Select {...register("type")} name="type" defaultValue="announcements">
           <option value="informative">Informative</option>
           <option value="announcements">Announcement</option>
         </Select>
       </SelectChannel>
       <CreateContent>
         <Label for="title"><Span>Title</Span></Label>
-        <Input type="text" name="title" placeholder="Title" />
+        <Input {...register("title")} type="text" name="title" placeholder="Title" />
       </CreateContent>
       <CreateContent>
         <Label for="subtitle"><Span>Subtitle</Span></Label>
-        <Input ref={ref} type="text" name="subtitle" placeholder="Subtitle" />
+        <Input {...register("subtitle")} type="text" name="subtitle" placeholder="Subtitle" />
       </CreateContent>
         <Label for="content"><Span>Content</Span></Label>
-        <textarea type="text" name="content" placeholder="Content" cols="30" rows="20" />
+        <textarea {...register("content")} type="text" name="content" placeholder="Content" cols="30" rows="20" />
       <SelectImage>
         <Label for="selectImage"><Span>Upload Image</Span></Label>
         <Input disabled type="file" />
       </SelectImage>
+      <button type="submit" >Preview</button>
     </StyledCreateCard>
   )
 }

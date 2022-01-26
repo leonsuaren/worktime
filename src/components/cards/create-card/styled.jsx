@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledCreateCard = styled.div`
+export const StyledCreateCard = styled.form`
   display: flex; 
   flex-direction: column;
   justify-items: center;
