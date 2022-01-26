@@ -53,7 +53,7 @@ export const More = () => {
             <LinkTo to='' disabled={disabled}  >
               <Slicer disabled={disabled} addSkeleton hoverOver  icon={<StyledAiOutlineUsergroupAdd disabled={disabled}/>} description={"Add a New Associated"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
-            <LinkTo to='' disabled={disabled}  >
+            <LinkTo to='/more/add-card' disabled={disabled}  >
               <Slicer disabled={disabled} addSkeleton hoverOver  icon={<StyledAiOutlineHdd disabled={disabled}/>} description={"Add a Card"} action={<StyledAiFillCaretRight disabled={disabled}/>} />
             </LinkTo>
             <LinkTo to='' disabled={disabled}  >

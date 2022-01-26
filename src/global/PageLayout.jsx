@@ -54,6 +54,9 @@ export const PageLayout = ({ children }) => {
   } else if (pathname === '/more/suggestions') {
     activePage = 'SUGGESTIONS';
     headerLayout = false;
+  } else if (pathname === '/more/add-card') {
+    activePage = 'ADD NEW CARD';
+    headerLayout = false;
   }
 
   return (

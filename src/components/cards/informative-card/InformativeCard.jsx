@@ -62,7 +62,7 @@ export const InformativeCard = ({ channelTitle, logo, title, subtitle, descripti
             <Footer>
               <LikeButton onClick={onLike}>
                 <StyledAiOutlineLike />
-                <LikeIncrement>{likes}</LikeIncrement>
+                <LikeIncrement>{incLikes}</LikeIncrement>
               </LikeButton>
               <LikeButton onClick={onUnLike}>
                 <StyledAiOutlineDislike />

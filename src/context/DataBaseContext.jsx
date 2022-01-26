@@ -16,7 +16,6 @@ useEffect(() => {
 const fetchOneChannel = ({oneChannel}) => {
   setOneChannel(oneChannel);
 };
-console.log(oneChannel)
   return(
     <DataBaseContext.Provider value={ { channels, oneChannel, fetchOneChannel } }>
       { children }
