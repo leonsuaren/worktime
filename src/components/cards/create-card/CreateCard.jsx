@@ -1,22 +1,24 @@
-import React from 'react';
-import { StyledCreateCard, Title, SelectChannel, Label, Span, Option, Select, CheckDepartment } from './styled';
+import React, { useRef } from 'react';
+import { StyledCreateCard, Title, SelectChannel, Label, Span, Select, SelectDepartment, SelectImage, Input, CreateContent } from './styled';
 
 export const CreateCard = () => {
+  const ref = useRef();
+  console.log(ref.current);
   return (
     <StyledCreateCard>
       <Title>Create a Card</Title>
-      <SelectChannel>
-        <Label for="cars"><Span>Department:</Span></Label>
-        <Select name="cars" id="cars">
+      <SelectDepartment>
+        <Label for="deparment"><Span>Department:</Span></Label>
+        <Select name="deparment" ref={ref}>
           <option value='human-resuorces' >Human Resources</option>
           <option value='warehouse' >Warehouse</option>
           <option value='freezer' >Freezer</option>
           <option value='perishable' >Perishable</option>
         </Select>
-      </SelectChannel>
+      </SelectDepartment>
       <SelectChannel>
-        <Label for="cars"><Span>Channel:</Span></Label>
-        <Select name="cars" id="cars">
+        <Label for="channel"><Span>Channel:</Span></Label>
+        <Select name="channel">
           <option value="diversity">Diversity and Inclusion</option>
           <option value="covid">COVIT-19 Comunications</option>
           <option value="focus">Focus on Wellness</option>
@@ -28,6 +30,27 @@ export const CreateCard = () => {
           <option value="annuoncements">Announcements</option>
         </Select>
       </SelectChannel>
+      <SelectChannel>
+        <Label for="type"><Span>Card Type:</Span></Label>
+        <Select name="type" defaultValue="announcements">
+          <option value="informative">Informative</option>
+          <option value="announcements">Announcement</option>
+        </Select>
+      </SelectChannel>
+      <CreateContent>
+        <Label for="title"><Span>Title</Span></Label>
+        <Input type="text" name="title" placeholder="Title" />
+      </CreateContent>
+      <CreateContent>
+        <Label for="subtitle"><Span>Subtitle</Span></Label>
+        <Input ref={ref} type="text" name="subtitle" placeholder="Subtitle" />
+      </CreateContent>
+        <Label for="content"><Span>Content</Span></Label>
+        <textarea type="text" name="content" placeholder="Content" cols="30" rows="20" />
+      <SelectImage>
+        <Label for="selectImage"><Span>Upload Image</Span></Label>
+        <Input disabled type="file" />
+      </SelectImage>
     </StyledCreateCard>
   )
 }
