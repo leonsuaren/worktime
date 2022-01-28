@@ -25,6 +25,7 @@ import { NotFound } from './pages/not-found';
 import { Loading } from './pages/loading';
 import { Suggestions } from './pages/more-view/suggestions';
 import { Channel } from './pages/channels-view/channel';
+import { AddCard } from './pages/more-view/add-card';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
                         <Route path='notifications' element={<Notifications />} />
                         <Route path='more' element={<More />} />
                         <Route path='more/suggestions' element={<Suggestions />} />
+                        <Route path='more/add-card' element={<AddCard/>} />
                         <Route path='settings' element={<Settings />} />
                         <Route path='settings/change-language' element={<ChangeLanguage />} />
                         <Route path='settings/add-notifications' element={<AddNotifications />} />

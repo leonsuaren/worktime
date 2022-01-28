@@ -43,7 +43,7 @@ export const Home = () => {
       {
         getChannel.map((card, key) => {
           return (
-            <Fragment>
+            <Fragment key={key}>
               <InformativeCard
               _id={card.id}
               logo={card.logo}
