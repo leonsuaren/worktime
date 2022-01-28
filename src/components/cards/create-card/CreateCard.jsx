@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { StyledCreateCard, Title, SelectChannel, Label, Span, Select, SelectDepartment, SelectImage, Input, CreateContent } from './styled';
+import { Button } from './../../button';
 
 export const CreateCard = () => {
   const { register, handleSubmit } = useForm();
   const [ cardInformation, setCardInformation ] = useState("");
-
+  console.log(cardInformation)
   return (
     <StyledCreateCard onSubmit={handleSubmit((data) => setCardInformation(data))}>
       <Title>Create a Card</Title>
