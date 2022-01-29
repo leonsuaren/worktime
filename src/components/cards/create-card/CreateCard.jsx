@@ -1,61 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { useForm } from 'react-hook-form';
-import { StyledCreateCard, Title, SelectChannel, Label, Span, Select, SelectDepartment, SelectImage, Input, CreateContent } from './styled';
-import { Button } from './../../button';
+import { StyledCreateCard, Title, SelectChannel, Label, Span, Select, SelectDepartment, SelectImage, Input, CreateContent, Button } from './styled';
+import { Modal } from '../../../components/modal';
 
 export const CreateCard = () => {
   const { register, handleSubmit } = useForm();
-  const [ cardInformation, setCardInformation ] = useState("");
+  const [cardInformation, setCardInformation] = useState("");
   console.log(cardInformation)
   return (
-    <StyledCreateCard onSubmit={handleSubmit((data) => setCardInformation(data))}>
-      <Title>Create a Card</Title>
-      <SelectDepartment>
-        <Label for="department"><Span>Department:</Span></Label>
-        <Select {...register("department")} name="department">
-          <option value='human-resuorces' >Human Resources</option>
-          <option value='warehouse' >Warehouse</option>
-          <option value='freezer' >Freezer</option>
-          <option value='perishable' >Perishable</option>
-        </Select>
-      </SelectDepartment>
-      <SelectChannel>
-        <Label for="channel"><Span>Channel:</Span></Label>
-        <Select {...register("channel")} name="channel">
-          <option value="diversity">Diversity and Inclusion</option>
-          <option value="covid">COVIT-19 Comunications</option>
-          <option value="focus">Focus on Wellness</option>
-          <option value="staying">Staying Safty at Home</option>
-          <option value="feed">Feed Your Spirit</option>
-          <option value="news">News to Know</option>
-          <option value="carries">Carries Corner</option>
-          <option value="faqs">FAQ's about work</option>
-          <option value="annuoncements">Announcements</option>
-        </Select>
-      </SelectChannel>
-      <SelectChannel>
-        <Label for="type"><Span>Card Type:</Span></Label>
-        <Select {...register("type")} name="type" defaultValue="announcements">
-          <option value="informative">Informative</option>
-          <option value="announcements">Announcement</option>
-        </Select>
-      </SelectChannel>
-      <CreateContent>
-        <Label for="title"><Span>Title</Span></Label>
-        <Input {...register("title")} type="text" name="title" placeholder="Title" />
-      </CreateContent>
-      <CreateContent>
-        <Label for="subtitle"><Span>Subtitle</Span></Label>
-        <Input {...register("subtitle")} type="text" name="subtitle" placeholder="Subtitle" />
-      </CreateContent>
+    <Fragment>
+      <Modal />
+      <StyledCreateCard onSubmit={handleSubmit((data) => setCardInformation(data))}>
+        <Title>Create a Card</Title>
+        <SelectDepartment>
+          <Label for="department"><Span>Department:</Span></Label>
+          <Select {...register("department")} name="department">
+            <option value='human-resuorces' >Human Resources</option>
+            <option value='warehouse' >Warehouse</option>
+            <option value='freezer' >Freezer</option>
+            <option value='perishable' >Perishable</option>
+          </Select>
+        </SelectDepartment>
+        <SelectChannel>
+          <Label for="channel"><Span>Channel:</Span></Label>
+          <Select {...register("channel")} name="channel">
+            <option value="diversity">Diversity and Inclusion</option>
+            <option value="covid">COVIT-19 Comunications</option>
+            <option value="focus">Focus on Wellness</option>
+            <option value="staying">Staying Safty at Home</option>
+            <option value="feed">Feed Your Spirit</option>
+            <option value="news">News to Know</option>
+            <option value="carries">Carries Corner</option>
+            <option value="faqs">FAQ's about work</option>
+            <option value="annuoncements">Announcements</option>
+          </Select>
+        </SelectChannel>
+        <SelectChannel>
+          <Label for="type"><Span>Card Type:</Span></Label>
+          <Select {...register("type")} name="type" defaultValue="announcements">
+            <option value="informative">Informative</option>
+            <option value="announcements">Announcement</option>
+          </Select>
+        </SelectChannel>
+        <CreateContent>
+          <Label for="title"><Span>Title</Span></Label>
+          <Input {...register("title")} type="text" name="title" placeholder="Title" />
+        </CreateContent>
+        <CreateContent>
+          <Label for="subtitle"><Span>Subtitle</Span></Label>
+          <Input {...register("subtitle")} type="text" name="subtitle" placeholder="Subtitle" />
+        </CreateContent>
         <Label for="content"><Span>Content</Span></Label>
         <textarea {...register("content")} type="text" name="content" placeholder="Content" cols="30" rows="20" />
-      <SelectImage>
-        <Label for="selectImage"><Span>Upload Image</Span></Label>
-        <Input disabled type="file" />
-      </SelectImage>
-      <button type="submit" >Preview</button>
-    </StyledCreateCard>
+        <SelectImage>
+          <Label for="selectImage"><Span>Upload Image</Span></Label>
+          <Input disabled type="file" />
+        </SelectImage>
+        <Button>Preview</Button>
+      </StyledCreateCard>
+    </Fragment>
   )
 }
 //=======Informative======
