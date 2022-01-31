@@ -32,14 +32,14 @@ export const Home = () => {
     }
     getChannel.push(channelObj)
   });
-
+  //add atribute 'addSkeleton' to 'ActionCard' to add skeleton to the action card
   return (
     <Fragment>
-      <ActionCard addSkeleton type='notification' title={languageContext.language.nextShift} day="Tomorrow Dec 5" time="5:00 AM - 3:00 PM" location="CFC" />
+      <ActionCard type='notification' title={languageContext.language.nextShift} day="Tomorrow Dec 5" time="5:00 AM - 3:00 PM" location="CFC" />
       <LinkTo to="first-contact">
-        <ActionCard addSkeleton title={languageContext.language.firstContact} description={languageContext.language.firstContactMsg} />
+        <ActionCard title={languageContext.language.firstContact} description={languageContext.language.firstContactMsg} />
       </LinkTo>
-      {showNotification ? <ActionCard addSkeleton type='notification' title={fullNotification.addTitle} day={fullNotification.addDay} time={fullNotification.addTime} location={fullNotification.addLocation} /> : ''}
+      {showNotification ? <ActionCard type='notification' title={fullNotification.addTitle} day={fullNotification.addDay} time={fullNotification.addTime} location={fullNotification.addLocation} /> : ''}
       {
         getChannel.map((card, key) => {
           return (
