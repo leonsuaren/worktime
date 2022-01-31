@@ -1,21 +1,60 @@
 import React, { useState, Fragment } from 'react';
-import { useForm } from 'react-hook-form';
+import { useFormik } from 'formik';
+// import { useForm } from 'react-hook-form';
 import { StyledCreateCard, Title, SelectChannel, Label, Span, Select, SelectDepartment, SelectImage, Input, CreateContent, Button } from './styled';
 import { Modal } from '../../../components/modal';
 
 export const CreateCard = () => {
-  const { register, handleSubmit } = useForm();
-  const [cardInformation, setCardInformation] = useState("");
-  console.log(cardInformation)
+
+  const validate = value => {
+    const errors = {};
+    if (!value.department) {
+      errors.department = 'Required'
+    }
+    if (!value.channel) {
+      errors.channel = 'Required'
+    }
+    if (!value.type) {
+      errors.type = 'Required'
+    }
+    if (!value.title) {
+      errors.title = 'Required'
+    }
+    if (!value.subtitle) {
+      errors.subtitle = 'Required'
+    } 
+    if (!value.content) {
+      errors.content = 'Required'
+    }
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      department: '',
+      channel: '',
+      type: '',
+      title: '',
+      subtitle: '',
+      content: ''
+    },
+    validate,
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   return (
     <Fragment>
       <Modal />
-      <StyledCreateCard onSubmit={handleSubmit((data) => setCardInformation(data))}>
+      <StyledCreateCard onSubmit={formik.handleSubmit}>
         <Title>Create a Card</Title>
         <SelectDepartment>
           <Label for="department"><Span>Department:</Span></Label>
-          <Select {...register("department")} name="department">
-            <option value='human-resuorces' >Human Resources</option>
+          <Select
+            name="department"
+            onChange={formik.handleChange}
+            value={formik.values.department}>
+            <option value='human-resources' >Human Resources</option>
             <option value='warehouse' >Warehouse</option>
             <option value='freezer' >Freezer</option>
             <option value='perishable' >Perishable</option>
@@ -23,7 +62,10 @@ export const CreateCard = () => {
         </SelectDepartment>
         <SelectChannel>
           <Label for="channel"><Span>Channel:</Span></Label>
-          <Select {...register("channel")} name="channel">
+          <Select
+            name="channel"
+            onChange={formik.handleChange}
+            value={formik.values.channel}>
             <option value="diversity">Diversity and Inclusion</option>
             <option value="covid">COVIT-19 Comunications</option>
             <option value="focus">Focus on Wellness</option>
@@ -37,26 +79,31 @@ export const CreateCard = () => {
         </SelectChannel>
         <SelectChannel>
           <Label for="type"><Span>Card Type:</Span></Label>
-          <Select {...register("type")} name="type" defaultValue="announcements">
+          <Select
+            name="type"
+            defaultValue="announcements"
+            onChange={formik.handleChange}
+            value={formik.values.type}>
             <option value="informative">Informative</option>
             <option value="announcements">Announcement</option>
           </Select>
         </SelectChannel>
         <CreateContent>
           <Label for="title"><Span>Title</Span></Label>
-          <Input {...register("title")} type="text" name="title" placeholder="Title" />
+          <Input type="text" name="title" placeholder="Title" onChange={formik.handleChange} value={formik.values.title}/>
+          {formik.errors.title ? <div>{formik.errors.title}</div> : null}
         </CreateContent>
         <CreateContent>
           <Label for="subtitle"><Span>Subtitle</Span></Label>
-          <Input {...register("subtitle")} type="text" name="subtitle" placeholder="Subtitle" />
+          <Input type="text" name="subtitle" placeholder="Subtitle" onChange={formik.handleChange} value={formik.values.subtitle}/>
         </CreateContent>
         <Label for="content"><Span>Content</Span></Label>
-        <textarea {...register("content")} type="text" name="content" placeholder="Content" cols="30" rows="20" />
+        <textarea type="text" name="content" placeholder="Content" cols="30" rows="20" onChange={formik.handleChange} value={formik.values.content}/>
         <SelectImage>
           <Label for="selectImage"><Span>Upload Image</Span></Label>
           <Input disabled type="file" />
         </SelectImage>
-        <Button>Preview</Button>
+        <Button type='submit'>Preview</Button>
       </StyledCreateCard>
     </Fragment>
   )
@@ -91,46 +138,75 @@ export const CreateCard = () => {
 //     date: new Date(),
 //   },
 
+// export const CreateCard = () => {
+//   const { register, handleSubmit } = useForm();
+//   const [cardInformation, setCardInformation] = useState("");
+//   const fullCardInformation = {};
+//   const cardId = (Math.floor(4000*Math.random()).toString()) + Date.now();
+//     fullCardInformation.deparment = cardInformation.department;
+//     fullCardInformation.logo = '/images/humanresources.png';
+//     fullCardInformation.channel = cardInformation.channel;
+//     fullCardInformation.type = cardInformation.type;
+//     fullCardInformation.title = cardInformation.title;
+//     fullCardInformation.subtitle = cardInformation.subtitle;
+//     fullCardInformation.content = cardInformation.content;
+//     fullCardInformation._cardId = cardId;
 
-// <CheckBoxSection>
-// <CheckDepartment>
-//   <FloatingTitle>Department</FloatingTitle>
-//   <Label><Span>Human Resources:</Span>
-//     <Input type='checkbox' />
-//   </Label>
-//   <Label> <Span>Warehouse:</Span>
-//     <Input type='checkbox' />
-//   </Label>
-//   <Label> <Span>Freezer:</Span>
-//     <Input type='checkbox' />
-//   </Label>
-//   <Label> <Span>Perishable:</Span>
-//     <Input type='checkbox' />
-//   </Label>
-// </CheckDepartment>
-// <CheckTypeOfCard>
-//   <FloatingTitle>Card Type</FloatingTitle>
-//   <Label><Span>Informative:</Span>
-//     <Input type='checkbox' />
-//   </Label>
-//   <Label> <Span>Announcements:</Span>
-//     <Input type='checkbox' />
-//   </Label>
-// </CheckTypeOfCard>
-// </CheckBoxSection>
-// <AddingTextSection>
-// <SelectChannel>
-//   <Label for="cars"><Span>Channel:</Span></Label>
-//   <select name="cars" id="cars">
-//     <option value="volvo">Diversity and Inclusion</option>
-//     <option value="saab">COVIT-19 Comunications</option>
-//     <option value="mercedes">Focus on Wellness</option>
-//     <option value="audi">Staying Safty at Home</option>
-//     <option value="audi">Feed Your Spirit</option>
-//     <option value="audi">News to Know</option>
-//     <option value="audi">Carries Corner</option>
-//     <option value="audi">FAQ's about work</option>
-//     <option value="audi">Announcements</option>
-//   </select>
-// </SelectChannel>
-// </AddingTextSection>
+//     console.log(fullCardInformation);
+//   const handleOnShowPreview = () => {
+//   }
+
+//   return (
+//     <Fragment>
+//       <Modal cardInformation={cardInformation} />
+//       <StyledCreateCard onSubmit={handleSubmit((data) => setCardInformation(data))}>
+//         <Title>Create a Card</Title>
+//         <SelectDepartment>
+//           <Label for="department"><Span>Department:</Span></Label>
+//           <Select {...register("department")} name="department">
+//             <option value='human-resources' >Human Resources</option>
+//             <option value='warehouse' >Warehouse</option>
+//             <option value='freezer' >Freezer</option>
+//             <option value='perishable' >Perishable</option>
+//           </Select>
+//         </SelectDepartment>
+//         <SelectChannel>
+//           <Label for="channel"><Span>Channel:</Span></Label>
+//           <Select {...register("channel")} name="channel">
+//             <option value="diversity">Diversity and Inclusion</option>
+//             <option value="covid">COVIT-19 Comunications</option>
+//             <option value="focus">Focus on Wellness</option>
+//             <option value="staying">Staying Safty at Home</option>
+//             <option value="feed">Feed Your Spirit</option>
+//             <option value="news">News to Know</option>
+//             <option value="carries">Carries Corner</option>
+//             <option value="faqs">FAQ's about work</option>
+//             <option value="annuoncements">Announcements</option>
+//           </Select>
+//         </SelectChannel>
+//         <SelectChannel>
+//           <Label for="type"><Span>Card Type:</Span></Label>
+//           <Select {...register("type")} name="type" defaultValue="announcements">
+//             <option value="informative">Informative</option>
+//             <option value="announcements">Announcement</option>
+//           </Select>
+//         </SelectChannel>
+//         <CreateContent>
+//           <Label for="title"><Span>Title</Span></Label>
+//           <Input {...register("title")} type="text" name="title" placeholder="Title" />
+//         </CreateContent>
+//         <CreateContent>
+//           <Label for="subtitle"><Span>Subtitle</Span></Label>
+//           <Input {...register("subtitle")} type="text" name="subtitle" placeholder="Subtitle" />
+//         </CreateContent>
+//         <Label for="content"><Span>Content</Span></Label>
+//         <textarea {...register("content")} type="text" name="content" placeholder="Content" cols="30" rows="20" />
+//         <SelectImage>
+//           <Label for="selectImage"><Span>Upload Image</Span></Label>
+//           <Input disabled type="file" />
+//         </SelectImage>
+//         <Button>Preview</Button>
+//       </StyledCreateCard>
+//     </Fragment>
+//   )
+// }
