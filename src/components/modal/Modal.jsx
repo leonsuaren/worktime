@@ -3,7 +3,7 @@ import React, { Fragment, useState } from 'react';
 import { ModalWrapper, StyledInformativeCard, Header, Title, LinkTo, Body, Avatar, BodyHeader, BodyTitle, TitleHead, BodyImage, BobyContent, BodySubtitle, DateHead, SubtitleHead } from './styled';
 
 export const Modal = ({ channelTitle, logo, title, subtitle, description, img, date, type, likes, unlikes, _id, _idCard, cardInformation, ...props }) => {
-const [ showModal, setShowModal ] = useState(true);
+const [ showModal, setShowModal ] = useState(false);
 const handleOnShowModal = () => {
   setShowModal(false)
 };
