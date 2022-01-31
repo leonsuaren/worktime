@@ -91,3 +91,15 @@ export const Select = styled.select`
   border-right: 0px;
   border-bottom: 1px solid '#cccccc';
 `;
+
+export const Button = styled.button`
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px 5px;
+  border: none;
+  background-color: ${p => p.cancel ? '#F23759' : p.theme.iconColor};
+  box-shadow: 0 0 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
+  min-width: 80px;
+  cursor: pointer;
+`;
