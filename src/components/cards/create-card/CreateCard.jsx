@@ -1,10 +1,22 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useRef, useEffect } from 'react';
 import { useFormik } from 'formik';
+import anime from 'animejs';
 // import { useForm } from 'react-hook-form';
 import { StyledCreateCard, Title, SelectChannel, Label, Span, Select, SelectDepartment, SelectImage, Input, CreateContent, Button } from './styled';
 import { Modal } from '../../../components/modal';
 
 export const CreateCard = () => {
+  const animationRef = useRef(null);
+
+  useEffect(() => {
+    var createCard = document.getElementById('createCardAnimation');
+    anime.remove(createCard);
+    animationRef.current = anime({
+      targets: '#createCardAnimation',
+      translateX: [-350, 0],
+      easing: 'easeOutExpo'
+    });
+  }, []);
 
   const validate = value => {
     const errors = {};
@@ -46,7 +58,7 @@ export const CreateCard = () => {
   return (
     <Fragment>
       <Modal />
-      <StyledCreateCard onSubmit={formik.handleSubmit}>
+      <StyledCreateCard id='createCardAnimation' onSubmit={formik.handleSubmit}>
         <Title>Create a Card</Title>
         <SelectDepartment>
           <Label for="department"><Span>Department:</Span></Label>
