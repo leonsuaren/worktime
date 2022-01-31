@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
-import { ModalWrapper } from './styled';
 
-import { Div, StyledInformativeCard, Header, Title, LinkTo, Body, Avatar, BodyHeader, BodyTitle, TitleHead, BodyImage, BobyContent, BodySubtitle, DateHead, SubtitleHead, BodyDescription } from './styled';
+import { ModalWrapper, StyledInformativeCard, Header, Title, LinkTo, Body, Avatar, BodyHeader, BodyTitle, TitleHead, BodyImage, BobyContent, BodySubtitle, DateHead, SubtitleHead } from './styled';
 
 export const Modal = ({ channelTitle, logo, title, subtitle, description, img, date, type, likes, unlikes, _id, _idCard, ...props }) => {
   return (
     <Fragment>
-      <ModalWrapper><Div>
+      <ModalWrapper>
         <StyledInformativeCard type={type}>
           <Header>
             <Title>{channelTitle}</Title>
@@ -41,7 +40,7 @@ export const Modal = ({ channelTitle, logo, title, subtitle, description, img, d
               : ''
           }
         </StyledInformativeCard>
-      </Div></ModalWrapper>
+      </ModalWrapper>
     </Fragment>
   )
 };
