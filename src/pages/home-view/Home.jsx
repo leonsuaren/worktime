@@ -1,5 +1,4 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react';
-import axios from 'axios';
 
 import { AddNotificationContext } from '../../context';
 import { LanguageContext } from '../../context';
@@ -32,14 +31,15 @@ export const Home = () => {
     }
     getChannel.push(channelObj)
   });
+
   //add atribute 'addSkeleton' to 'ActionCard' to add skeleton to the action card
   return (
     <Fragment>
-      <ActionCard type='notification' title={languageContext.language.nextShift} day="Tomorrow Dec 5" time="5:00 AM - 3:00 PM" location="CFC" />
+      <ActionCard addSkeleton type='notification' title={languageContext.language.nextShift} day="Tomorrow Dec 5" time="5:00 AM - 3:00 PM" location="CFC" />
       <LinkTo to="first-contact">
-        <ActionCard title={languageContext.language.firstContact} description={languageContext.language.firstContactMsg} />
+        <ActionCard addSkeleton title={languageContext.language.firstContact} description={languageContext.language.firstContactMsg} />
       </LinkTo>
-      {showNotification ? <ActionCard type='notification' title={fullNotification.addTitle} day={fullNotification.addDay} time={fullNotification.addTime} location={fullNotification.addLocation} /> : ''}
+      {showNotification ? <ActionCard addSkeleton type='notification' title={fullNotification.addTitle} day={fullNotification.addDay} time={fullNotification.addTime} location={fullNotification.addLocation} /> : ''}
       {
         getChannel.map((card, key) => {
           return (

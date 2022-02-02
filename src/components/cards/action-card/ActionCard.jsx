@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 
 import { Skeleton } from '../../skeleton';
 
+import anime from 'animejs';
+
 import {
   StyledActionCard, NotificationContent, FirstContactContent, Title, Description, Day, Time, Location,
   TitleInput, DayInput, TimeInput, LocationInput
@@ -9,6 +11,7 @@ import {
 import { StyledAiOutlineCalendar, StyledAiOutlineCopy } from '../../../global';
 
 const Notification = ({ title, day, time, location }) => {
+
   return (
     <Fragment>
       <NotificationContent>
@@ -23,6 +26,7 @@ const Notification = ({ title, day, time, location }) => {
 };
 
 const FirstContact = ({ title, description }) => {
+
   return (
     <Fragment>
       <FirstContactContent>
@@ -44,6 +48,14 @@ export const ActionCard = ({ type, title, day, time, location, description, addS
     skeletonTime();
   }, [skeleton]);
 
+  useEffect(() => {
+    anime({
+      targets: '#actionCardAnimation',
+      opacity: 1,
+      duration: 1500,
+      easing: 'easeInQuad'
+    });
+  }, []);
 
   return (
     <Fragment>
