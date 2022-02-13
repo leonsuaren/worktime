@@ -7,6 +7,18 @@ import { Modal } from '../../../components/modal';
 
 export const CreateCard = () => {
   const animationRef = useRef(null);
+  const [ newCardValues, setNewCardValues ] = useState({
+    department: '',
+    logo: '',
+    channel: '',
+    type: '',
+    tutle: '',
+    subtitle: '',
+    content: '',
+    imagen: '',
+    likes: 0,
+    unlikes: 0
+  });
 
   useEffect(() => {
     var createCard = document.getElementById('createCardAnimation');
@@ -51,9 +63,18 @@ export const CreateCard = () => {
     },
     validate,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      setNewCardValues({
+        department: values.department,
+        channel: values.channel,
+        type: values.type,
+        title: values.type,
+        subtitle: values.subtitle,
+        content: values.content
+      })
     },
   });
+
+  console.log(newCardValues);
 
   return (
     <Fragment>
